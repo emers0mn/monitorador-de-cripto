@@ -1,0 +1,10 @@
+body{
+    --cor-1: #2DC850;
+    --cor-2: #00FF19;
+    --cor-3: #589E85;
+    --cor-4: #97C5B4;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
