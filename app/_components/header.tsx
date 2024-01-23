@@ -11,6 +11,7 @@ const Header = () => {
         height={50}
         quality={75}
         loading='lazy'
+        alt="Logo da Libertad"
         />
         <p className={style.frase}>entenda seu câmbio em pesos argentinos</p>
       </header>

@@ -96,6 +96,7 @@ export default function Home() {
                     height={8.31}
                     quality={75}
                     loading='lazy'
+                    alt='Reais para peso conversão direta'
                   />
                   <h2 className={styles.title2}>Pesos</h2>
                 </div>
@@ -115,6 +116,7 @@ export default function Home() {
                   height={8.31}
                   quality={75}
                   loading='lazy'
+                  alt='Reais para pesos P2P'
                 />
                 <h2 className={styles.title2}>Pesos</h2>
               </div>
