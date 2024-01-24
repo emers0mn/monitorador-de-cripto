@@ -20,7 +20,7 @@ export default function Home() {
           </div>
           <div className={styles.divisor}></div>
           <div className={styles.valoresFinais}>
-            <h2>Dólar Cripto</h2>
+            <h2 className={styles.title2}>Dólar Cripto</h2>
             <LemonDolar />
           </div>
         </div>

@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
-import { Poppins } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from './_components/header'
 import Footer from './_components/footer'
 
-const poppins = Poppins({ subsets: ['latin'], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]  })
+const inter = Inter({ subsets: ['latin']  })
 
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="Pt-br">
-      <body className={poppins.className}>
+      <body className={inter.className}>
         <Header/>
         {children}
         <Footer />
