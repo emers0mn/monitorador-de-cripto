@@ -1,0 +1,29 @@
+.dolar {
+    font-size: 45px;
+    margin: 0;
+    position: relative;
+}
+
+.cifra {
+    position: absolute;
+    font-size: 20px;
+    color: var(--cor-4);
+    right: 120px;
+    top: 4px;
+    font-weight: 500;
+}
+
+.realPeso{
+    font-size: 45px;
+    margin: 10px;
+    position: relative;
+}
+
+.cifra1{
+    position: absolute;
+    font-size: 20px;
+    color: var(--cor-4);
+    right: 85px;
+    top: 4px;
+    font-weight: 500;
+}

@@ -12,9 +12,9 @@ export default function Home() {
           <div>
             <div className={styles.valoresFinais}>
               <h2 className={styles.title2}>Dólar Blue</h2>
-              <strong>
+              
               <DolarBlue />
-              </strong>
+              
             </div>
 
           </div>
@@ -33,6 +33,32 @@ export default function Home() {
           <div className={styles.valores}>
             <div>
               <div className={styles.valoresFinais}>
+
+                <div className={styles.detalhe}>
+                  <div className={styles.valoresFinais1}>
+                    <h2 className={styles.title2}>Reais</h2>
+                    <Image
+                      src={"./img/icon/favicon_vai.svg"}
+                      width={9.17}
+                      height={8.31}
+                      quality={75}
+                      alt='Reais para pesos direto'
+                    />
+                    <h2 className={styles.title2}>Pesos</h2>
+                  </div>
+                  <h3>(<strong>direto</strong>)</h3>
+                </div>
+                
+                
+                <ReaisPeso1 />
+                
+              </div>
+
+            </div>
+            <div className={styles.divisor}></div>
+            <div className={styles.valoresFinais}>
+              
+              <div className={styles.detalhe}>
                 <div className={styles.valoresFinais1}>
                   <h2 className={styles.title2}>Reais</h2>
                   <Image
@@ -40,31 +66,15 @@ export default function Home() {
                     width={9.17}
                     height={8.31}
                     quality={75}
-                    alt='Reais para pesos direto'
+                    alt='Reais para pesos P2P'
                   />
                   <h2 className={styles.title2}>Pesos</h2>
                 </div>
-                <strong>
-                <ReaisPeso1 />
-                </strong>
-              </div>
-
-            </div>
-            <div className={styles.divisor}></div>
-            <div className={styles.valoresFinais}>
-              <div className={styles.valoresFinais1}>
-                <h2 className={styles.title2}>Reais</h2>
-                <Image
-                  src={"./img/icon/favicon_vai.svg"}
-                  width={9.17}
-                  height={8.31}
-                  quality={75}
-                  alt='Reais para pesos P2P'
-                />
-                <h2 className={styles.title2}>Pesos</h2>
+                <h3>(<strong>p2p</strong>)</h3>
               </div>
               <ReaisPeso2 />
             </div>
+
           </div>
           <p className={styles.atualiza}>Última atualização:</p>
         </div>

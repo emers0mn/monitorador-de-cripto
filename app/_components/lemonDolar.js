@@ -1,3 +1,5 @@
+import style from './lemonDolar.module.css'
+
 async function getDolar(){
   const res = await fetch('https://criptoya.com/api/lemoncash/usdt/ars/0.1', {
     next: {
@@ -32,10 +34,11 @@ async function getDolarBlue(){
 /*Dólares*/
 
 export async function DolarBlue(){
+
   const dolar = await getDolarBlue()
   return(
     <>
-    <p>${Math.ceil(dolar.venta)}</p>
+    <p className={style.dolar}><span className={style.cifra}>$</span>{Math.ceil(dolar.venta).toLocaleString('pt-BR')}</p>
     </>
   )
 }
@@ -44,7 +47,7 @@ export async function LemonDolar(){
   const dolar = await getDolar()
   return(
     <>
-    <p>${Math.ceil(dolar.totalBid)}</p>
+    <p className={style.dolar}><span className={style.cifra}>$</span>{Math.ceil(dolar.totalBid).toLocaleString('pt-BR')}</p>
     </>
   )
 }
@@ -58,7 +61,7 @@ export async function ReaisPeso1(){
   const resultado = Math.ceil(dolar.totalBid / realDolar.totalBid)
   return(
     <>
-    <p>${resultado}</p>
+    <p className={style.realPeso}><span className={style.cifra1}>$</span>{resultado}</p>
     </>
   )
 }
@@ -70,7 +73,7 @@ export async function ReaisPeso2(){
   const resultado = Math.ceil(dolar.totalAsk / realDolar.totalAsk)
   return(
     <>
-    <p>${resultado}</p>
+    <p className={style.realPeso}><span className={style.cifra1}>$</span>{resultado}</p>
     </>
   )
 }
