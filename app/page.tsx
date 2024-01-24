@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import Link from 'next/link';
-import LemonDolar from './_components/lemonDolar';
+import { DolarBlue, LemonDolar, ReaisPeso1, ReaisPeso2 } from './_components/lemonDolar';
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
             <div className={styles.valoresFinais}>
               <h2 className={styles.title2}>Dólar Blue</h2>
               <strong>
-              <LemonDolar />
+              <DolarBlue />
               </strong>
             </div>
 
@@ -47,7 +47,7 @@ export default function Home() {
                   <h2 className={styles.title2}>Pesos</h2>
                 </div>
                 <strong>
-                <LemonDolar />
+                <ReaisPeso1 />
                 </strong>
               </div>
 
@@ -65,7 +65,7 @@ export default function Home() {
                 />
                 <h2 className={styles.title2}>Pesos</h2>
               </div>
-              <LemonDolar />
+              <ReaisPeso2 />
             </div>
           </div>
           <p className={styles.atualiza}>Última atualização:</p>
