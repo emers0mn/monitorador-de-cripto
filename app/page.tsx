@@ -1,66 +1,13 @@
-'use client'
-
 import Image from 'next/image'
 import styles from './page.module.css'
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import Api from './_components/lemonDolar';
-
-
+import LemonDolar from './_components/lemonDolar';
 
 export default function Home() {
-
-  const [pesoDolar, setPesoDolar] = useState([])
-  const [realDolar, setRealDolar] = useState([])
-  const [blue, setBlue] = useState([])
-
-    useEffect(() => {
-        const PESO_DOLAR_URL = 'https://criptoya.com/api/lemoncash/usdt/ars/0.1'
-        fetch(PESO_DOLAR_URL)
-        .then((pesoLemon) => {
-            return pesoLemon.json()
-        })
-        .then((resposta) => {
-            
-            setPesoDolar(resposta)
-        })
-    }, [])
-
-    useEffect(() => {
-      const REAL_DOLAR_URL = 'https://criptoya.com/api/binance/usdt/brl/0.1'
-      fetch(REAL_DOLAR_URL)
-      .then((realBinance) => {
-          return realBinance.json()
-      })
-      .then((resposta) => {
-          
-          setRealDolar(resposta)
-      })
-  }, [])
-
-  useEffect(() => {
-    const DOLAR_BLUE_URL = 'https://dolarapi.com/v1/dolares/blue'
-    fetch(DOLAR_BLUE_URL)
-    .then((blue) => {
-        return blue.json()
-    })
-    .then((resposta) => {
-        
-        setBlue(resposta)
-    })
-}, [])
-
-  const cotacaoCard = Math.round(pesoDolar.totalBid / realDolar.totalBid )
-
-  const cotacaoP2P = Math.round(pesoDolar.totalAsk / realDolar.totalAsk )
-    
-    
-
-
   return (
     <main className={styles.content}>
       
-          
+          <LemonDolar />
       
       <div className={styles.valoresContent}>
         <div className={styles.valores}>
@@ -68,7 +15,7 @@ export default function Home() {
             <div className={styles.valoresFinais}>
               <h2 className={styles.title2}>Dólar Blue</h2>
               <strong>
-                <p>${blue.venta}</p>
+              <LemonDolar />
               </strong>
             </div>
 
@@ -76,7 +23,7 @@ export default function Home() {
           <div className={styles.divisor}></div>
           <div className={styles.valoresFinais}>
             <h2>Dólar Cripto</h2>
-            <p>${Math.round(pesoDolar.totalBid)}</p>
+            <LemonDolar />
           </div>
         </div>
         <p className={styles.atualiza}>Última atualização:</p>
@@ -95,13 +42,12 @@ export default function Home() {
                     width={9.17}
                     height={8.31}
                     quality={75}
-                    loading='lazy'
-                    alt='Reais para peso conversão direta'
+                    alt='Reais para pesos direto'
                   />
                   <h2 className={styles.title2}>Pesos</h2>
                 </div>
                 <strong>
-                  <p>${cotacaoCard}</p>
+                <LemonDolar />
                 </strong>
               </div>
 
@@ -115,12 +61,11 @@ export default function Home() {
                   width={9.17}
                   height={8.31}
                   quality={75}
-                  loading='lazy'
                   alt='Reais para pesos P2P'
                 />
                 <h2 className={styles.title2}>Pesos</h2>
               </div>
-              <p>${cotacaoP2P}</p>
+              <LemonDolar />
             </div>
           </div>
           <p className={styles.atualiza}>Última atualização:</p>

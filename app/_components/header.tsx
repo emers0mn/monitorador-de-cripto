@@ -6,12 +6,11 @@ const Header = () => {
         <>
         <header className={style.cabecalho}>
         <Image
-        src={"./img/icon/logo.svg"}
+        src={"/img/icon/logo.svg"}
         width={135}
         height={50}
         quality={75}
-        loading='lazy'
-        alt="Logo da Libertad"
+        alt="Logo"
         />
         <p className={style.frase}>entenda seu câmbio em pesos argentinos</p>
       </header>
