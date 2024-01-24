@@ -80,13 +80,6 @@ export default function Home() {
         </div>
 
 
-
-      <div>
-        <h2>Calculadora de Cambio:</h2>
-        <Link href={"/calculadora"}>Voltar para calculadora</Link>
-      </div>
-
-
     </main>
   )
 }
