@@ -2,6 +2,8 @@ import Image from 'next/image'
 import styles from './page.module.css'
 import Link from 'next/link';
 import { DolarBlue, LemonDolar, ReaisPeso1, ReaisPeso2 } from './_components/lemonDolar';
+import Dicas from './_components/(dicas)/Dicas';
+import Calculadora from './_components/(calculadora)/Calculadora';
 
 export default function Home() {
   return (
@@ -78,8 +80,8 @@ export default function Home() {
           </div>
           <p className={styles.atualiza}>Última atualização:</p>
         </div>
-
-
+          <Calculadora />
+          <Dicas />
     </main>
   )
 }

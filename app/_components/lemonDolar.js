@@ -77,3 +77,11 @@ export async function ReaisPeso2(){
     </>
   )
 }
+
+export async function ReaisPesoFinal(a){
+  const dolar = await getDolar()
+  const realDolar = await getRealDolar()
+
+  const resultado = Math.ceil(dolar.totalBid / realDolar.totalBid)
+  return(resultado * a)
+}
