@@ -1,5 +1,13 @@
 import style from "./dicas.module.css"
 
+
+
+type Dica = {
+    id: string;
+    title: string;
+    conteudo: string;
+  };
+
 async function getDados() {
     const res = await fetch('https://emers0mn.github.io/Teste-conteudo/teste.json', {
         next: {
@@ -18,7 +26,7 @@ export default async function Dicas() {
     return (
         <main className={style.content}>
             <h2>Dicas do Emerson</h2>
-            {dados.map((dica) => (
+            {dados.map((dica: Dica) => (
                 <div key={dica.id}>
 
                     <h3>{dica.title}</h3>
