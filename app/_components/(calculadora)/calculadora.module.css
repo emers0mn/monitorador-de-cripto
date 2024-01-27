@@ -1,6 +1,12 @@
 .content{
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.contentCalculadoras{
+    display: flex;
+    gap: 50px;
     justify-content: center;
     align-items: center;
 }
@@ -31,4 +37,14 @@
     border: solid var(--cor-1);
     border-radius: 5px;
     margin-bottom: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .contentCalculadoras{
+        display: block;
+    }
+
+    .contentInput{
+        margin-bottom: 20px;
+    }
 }

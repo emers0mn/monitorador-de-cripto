@@ -3,57 +3,70 @@
 import { useState, useEffect } from "react";
 import style from './calculadora.module.css'
 
-type Repositorio = {
+type ApiResposta = {
     totalBid: number;
 };
 
 export default function Calculadora() {
 
-    const [peso, setPeso] = useState<Repositorio>({ totalBid: 0 });
+    const [peso, setPeso] = useState<ApiResposta | null>(null);
+    const [reais, setReais] = useState<ApiResposta | null>(null);
+    const [valor, setValor] = useState<number>(0);
+    const [valorPesos, setValorPesos] = useState<number>(0);
 
     useEffect(() => {
         const fetchData = async () => {
             const res = await fetch('https://criptoya.com/api/lemoncash/usdt/ars/0.1');
             const resposta = await res.json();
-            console.log(resposta);
             setPeso(resposta);
         };
 
         fetchData();
     }, []);
 
-    const [reais, setReais] = useState<Repositorio>({ totalBid: 0 });
-
     useEffect(() => {
         const fetchData = async () => {
             const res = await fetch('https://criptoya.com/api/binance/usdt/brl/0.1');
             const resposta = await res.json();
-            console.log(resposta);
             setReais(resposta);
         };
 
         fetchData();
     }, []);
 
-    const [valor, setValor] = useState(0);
-
-    function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
-        setValor(Number(event.target.value));
-    }
+    const resultadoReais = peso && reais ? valor * (Math.ceil(peso.totalBid / reais.totalBid)) : 0;
+    const resultadoPesos = peso && reais ? valorPesos / (Math.ceil(peso.totalBid / reais.totalBid)) : 0;
 
     return (
         <section className={style.content}>
             <h2>Calculadora:</h2>
-            <form className={style.contentInput}>
-                <label>Reais:</label>
-                <div className={style.cal}>
-                    <small>R$</small>
-                    <input placeholder="Reais para pesos..." value={valor} onChange={handleInputChange} />
-                </div>
-            </form>
-
-            <strong>Resultado: ${(valor * (Math.ceil(peso.totalBid / reais.totalBid))).toLocaleString('pt-BR')}</strong>
-
+            <div className={style.contentCalculadoras}>
+            
+                <form className={style.contentInput}>
+                    <label>Reais:</label>
+                    <div className={style.cal}>
+                        <small>R$</small>
+                        <input
+                        placeholder="Reais para pesos..."
+                        value={valor}
+                        onChange={(e) => setValor(Number(e.target.value))}
+                        />
+                    </div>
+                    <strong>Resultado: ${resultadoReais.toLocaleString('pt-BR')}</strong>
+                </form>
+                <form className={style.contentInput}>
+                    <label>Pesos:</label>
+                    <div className={style.cal}>
+                        <small>$</small>
+                        <input
+                        placeholder="Pesos para reais..."
+                        value={valorPesos}
+                        onChange={(d) => setValorPesos(Number(d.target.value))}
+                        />
+                    </div>
+                    <strong>Resultado: R${resultadoPesos.toLocaleString('pt-BR')}</strong>
+                </form>
+            </div>
         </section>
     );
 }
