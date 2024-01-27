@@ -48,7 +48,6 @@ export default function Calculadora() {
                         <small>R$</small>
                         <input
                         placeholder="Reais para pesos..."
-                        value={valor}
                         onChange={(e) => setValor(Number(e.target.value))}
                         />
                     </div>
@@ -60,7 +59,6 @@ export default function Calculadora() {
                         <small>$</small>
                         <input
                         placeholder="Pesos para reais..."
-                        value={valorPesos}
                         onChange={(d) => setValorPesos(Number(d.target.value))}
                         />
                     </div>
