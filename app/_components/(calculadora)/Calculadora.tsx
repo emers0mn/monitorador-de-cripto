@@ -1,46 +1,57 @@
-// 'use client';
+ 'use client';
 
-// import { useState } from "react";
-// import { ReaisPesoFinal } from "../lemonDolar";
+ import { useState, useEffect } from "react";
 
-// export default function Calculadora() {
+ type PesoType = {
+    totalBid: number;
+  };
 
-    
-    
-//     const [reais, setReais] = useState(0);
-//     const resultado = ReaisPesoFinal(reais)
+ export default function Calculadora() {
 
-//     function handleInputChange(event) {
-//         setReais(event.target.value);
-//     }
+    const [peso, setPeso] = useState<PesoType>({ totalBid: 0 });
 
-//     function handleSubmit(event) {
-//         event.preventDefault();
-//         // Coloque aqui a lógica que você quer executar quando o formulário for enviado
-//     }
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch('https://criptoya.com/api/lemoncash/usdt/ars/0.1');
+      const resposta = await res.json();
+      console.log(resposta);
+      setPeso(resposta);
+    };
 
-//     return (
-//         <section>
-//             <h2>Calculadora:</h2>
-//             <form onSubmit={handleSubmit}>
-//                 <select id="moedaParaCalular">
-//                     <option value="direto">direto</option>
-//                     <option value="p2p">p2p</option>
-//                 </select>
-//                 <input placeholder="Reais para pesos..." value={reais} onChange={handleInputChange}/>
-//                 <button type="submit">Calcular</button>
-//             </form>
+    fetchData();
+  }, []);
 
-//             <small>Resultado: $ {resultado}</small>
+  const [reais, setReais] = useState<PesoType>({ totalBid: 0 });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch('https://criptoya.com/api/binance/usdt/brl/0.1');
+      const resposta = await res.json();
+      console.log(resposta);
+      setReais(resposta);
+    };
+
+    fetchData();
+  }, []);
+
+
+
+
+     const [valor, setValor] = useState(0);
+
+     function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+        setValor(Number(event.target.value));
+      }
+
+     return (
+         <section>
+             <h2>Calculadora:</h2>
+             <form>
+                 <input placeholder="Reais para pesos..." value={valor} onChange={handleInputChange}/>
+             </form>
+
+             <small>Resultado: {(valor * (Math.ceil(peso.totalBid / reais.totalBid))).toLocaleString('pt-BR')}</small>
             
-//         </section>
-//     );
-// }
-export default function Calculadora(){
-    return(
-        <>
-        <h3>Calculadora:</h3>
-        <p>Em desenvolvimento...</p>
-        </>
-    )
-}
+         </section>
+     );
+ }

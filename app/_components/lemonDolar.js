@@ -1,4 +1,4 @@
-import style from './lemonDolar.module.css'
+import style from './lemonDolar.module.css';
 
 async function getDolar(){
   const res = await fetch('https://criptoya.com/api/lemoncash/usdt/ars/0.1', {
@@ -78,10 +78,4 @@ export async function ReaisPeso2(){
   )
 }
 
-export async function ReaisPesoFinal(a){
-  const dolar = await getDolar()
-  const realDolar = await getRealDolar()
-
-  const resultado = Math.ceil(dolar.totalBid / realDolar.totalBid)
-  return(resultado * a)
-}
+/*Reais para pesos*/
