@@ -1,0 +1,34 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentInput{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.cal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    position: relative;
+
+}
+
+.cal small {
+    position: relative;
+    bottom: 5px;
+}
+
+.cal input{
+    border: solid var(--cor-1);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
