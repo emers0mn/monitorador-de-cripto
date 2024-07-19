@@ -40,7 +40,7 @@ export async function DolarBlue(){
   return(
     <>
     <p className={style.dolar}>
-      <span className={style.cifra}>$</span><span className={style.cifra}>$</span>
+      <span className={style.cifra}>$</span>
       {Math.ceil(dolar.venta).toLocaleString('pt-BR')}</p>
     </>
   )
@@ -52,7 +52,7 @@ export async function LemonDolar({ ex }){
   return(
     <>
     <p className={style.dolar}>
-      <span className={style.cifra}>$</span><span className={style.cifra}>$</span>
+      <span className={style.cifra}>$</span>
       {Math.ceil(dolar.totalBid).toLocaleString('pt-BR')}</p>
     </>
   )
