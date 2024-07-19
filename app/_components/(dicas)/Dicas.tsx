@@ -29,7 +29,7 @@ export default async function Dicas() {
             {dados.map((dica: Dica) => (
                 <div key={dica.id}>
 
-                    <h3>{dica.title}</h3>
+                    <h2>{dica.title}</h2>
                     <p>{dica.conteudo}</p>
 
                 </div>

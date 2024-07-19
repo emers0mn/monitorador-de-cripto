@@ -1,0 +1,49 @@
+.contentButton{
+    display: flex;
+    gap: 10px;
+    margin: auto;
+    justify-content: center;
+}
+
+.selectionE{
+    text-align: center;
+}
+
+/* .contentButton button{
+    border: none;
+    border-radius: 7px;
+    padding: 10px 15px;
+
+    background: var(--cor-1);
+    color: #fff;
+    font-weight: 600;
+} */
+
+.active{
+    border: none;
+    border-radius: 7px;
+    padding: 13px 15px 5px 15px;
+
+    background: var(--cor-1);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    scale: 1;
+    transition: 0.5s;
+}
+
+.desativo{
+    border: solid var(--cor-1);
+    border-radius: 7px;
+    padding: 10px 15px;
+
+    
+    color: var(--cor-4);
+    font-weight: 600;
+    cursor: pointer;
+    scale: 0.9;
+    transition: 0.5s;
+}
+
+/* dark mode */
+

@@ -1,11 +1,14 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import Link from 'next/link';
-import { DolarBlue, LemonDolar, ReaisPeso1, ReaisPeso2 } from './_components/lemonDolar';
+import { DolarBlue, LemonDolar, ReaisPeso1, ReaisPeso2 } from './_components/(lemonDolar)/lemonDolar';
 import Dicas from './_components/(dicas)/Dicas';
 import Calculadora from './_components/(calculadora)/Calculadora';
+import Exchanges from './_components/(selection)/exchange';
+import { ParamsCash1, ParamsCash2, ParamsCashL } from './_components/(lemonDolar)/params';
 
 export default function Home() {
+
   return (
     <main className={styles.content}>
       
@@ -23,13 +26,11 @@ export default function Home() {
           <div className={styles.divisor}></div>
           <div className={styles.valoresFinais}>
             <h2 className={styles.title2}>Dólar Cripto</h2>
-            <LemonDolar />
+            <ParamsCashL />
           </div>
         </div>
         <p className={styles.atualiza}>Última atualização:</p>
       </div>
-
-
       
         <div className={styles.valoresContent}>
           <div className={styles.valores}>
@@ -41,7 +42,7 @@ export default function Home() {
                     <h2 className={styles.title2}>Reais</h2>
                     <Image
                       src={"./img/icon/favicon_vai.svg"}
-                      width={9.17}
+                      width={12}
                       height={8.31}
                       quality={75}
                       alt='Reais para pesos direto'
@@ -52,7 +53,7 @@ export default function Home() {
                 </div>
                 
                 
-                <ReaisPeso1 />
+                <ParamsCash1 />
                 
               </div>
 
@@ -65,7 +66,7 @@ export default function Home() {
                   <h2 className={styles.title2}>Reais</h2>
                   <Image
                     src={"./img/icon/favicon_vai.svg"}
-                    width={9.17}
+                    width={12}
                     height={8.31}
                     quality={75}
                     alt='Reais para pesos P2P'
@@ -74,12 +75,15 @@ export default function Home() {
                 </div>
                 <h3>(<strong>p2p</strong>)</h3>
               </div>
-              <ReaisPeso2 />
+              <ParamsCash2 />
             </div>
 
           </div>
           <p className={styles.atualiza}>Última atualização:</p>
         </div>
+
+        
+          <Exchanges />
           <Calculadora />
           <Dicas />
     </main>

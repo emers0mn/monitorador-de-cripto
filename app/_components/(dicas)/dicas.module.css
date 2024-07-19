@@ -1,3 +1,19 @@
 .content{
     width: 100%;
+    margin: auto;
+    text-align: center;
 }
+
+.content h2{
+    color: var(--cor-1);
+}
+
+.content p{
+    font-weight: 500;
+}
+
+@media screen and (min-width: 1280px) {
+    .content{
+        width: 40%;
+    }
+}   
