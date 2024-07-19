@@ -3,7 +3,7 @@ import styles from './page.module.css'
 import Link from 'next/link';
 import { DolarBlue, LemonDolar, ReaisPeso1, ReaisPeso2 } from './_components/(lemonDolar)/lemonDolar';
 import Dicas from './_components/(dicas)/Dicas';
-import Calculadora from './_components/(calculadora)/Calculadora';
+
 import Exchanges from './_components/(selection)/exchange';
 import  { ParamsCash1, ParamsCash2, ParamsCashL } from './_components/(lemonDolar)/params';
 
