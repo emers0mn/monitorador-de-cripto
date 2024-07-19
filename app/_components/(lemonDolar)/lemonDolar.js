@@ -1,5 +1,4 @@
 import style from './lemonDolar.module.css';
-import Params from './params'
 
 async function getDolar(ex){
   const res = await fetch(`https://criptoya.com/api/${ex}/usdt/ars/0.1`, {

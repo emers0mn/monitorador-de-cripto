@@ -5,7 +5,7 @@ import { DolarBlue, LemonDolar, ReaisPeso1, ReaisPeso2 } from './_components/(le
 import Dicas from './_components/(dicas)/Dicas';
 import Calculadora from './_components/(calculadora)/Calculadora';
 import Exchanges from './_components/(selection)/exchange';
-import { ParamsCash1, ParamsCash2, ParamsCashL } from './_components/(lemonDolar)/params';
+import  { ParamsCash1, ParamsCash2, ParamsCashL } from './_components/(lemonDolar)/params';
 
 export default function Home() {
 
@@ -84,7 +84,7 @@ export default function Home() {
 
         
           <Exchanges />
-          <Calculadora />
+          
           <Dicas />
     </main>
   )
