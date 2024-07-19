@@ -1,8 +1,7 @@
 'use client'
 import Link from 'next/link'
 import style from './exchanges.module.css'
-import { useRouter, useSearchParams } from 'next/navigation'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 
 export default function Exchanges() {
@@ -28,15 +27,6 @@ export default function Exchanges() {
                         setBitso(true)
                     })}
                     className={bitso ? style.active : style.desativo} href={"?exchange=bitsoalpha"}  >Bitso</Link>
-
-                {/* <button className={exchange === "lemoncash" ? style.active: style.desativo}
-                onClick={(() => {
-                    router.push('/?exchange=lemoncash')
-                    setLemon(true)
-                    setBitso(false)
-                })}>Lemon Cash</button>
-                
-                <button className={exchange === "bitsoalpha" ? style.active: style.desativo} onClick={() => router.push('/?exchange=bitsoalpha')}>Bitso</button> */}
 
             </div>
         </section>

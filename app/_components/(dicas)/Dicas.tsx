@@ -1,7 +1,5 @@
 import style from "./dicas.module.css"
 
-
-
 type Dica = {
     id: string;
     title: string;

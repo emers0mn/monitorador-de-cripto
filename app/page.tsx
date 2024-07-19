@@ -3,9 +3,8 @@ import styles from './page.module.css'
 import Link from 'next/link';
 import { DolarBlue, LemonDolar, ReaisPeso1, ReaisPeso2 } from './_components/(lemonDolar)/lemonDolar';
 import Dicas from './_components/(dicas)/Dicas';
-
+import Calculadora from './_components/(calculadora)/Calculadora';
 import Exchanges from './_components/(selection)/exchange';
-import  { ParamsCash1, ParamsCash2, ParamsCashL } from './_components/(lemonDolar)/params';
 
 export default function Home() {
 
@@ -26,7 +25,9 @@ export default function Home() {
           <div className={styles.divisor}></div>
           <div className={styles.valoresFinais}>
             <h2 className={styles.title2}>Dólar Cripto</h2>
-            <ParamsCashL />
+            <LemonDolar
+              
+            />
           </div>
         </div>
         <p className={styles.atualiza}>Última atualização:</p>
@@ -53,7 +54,7 @@ export default function Home() {
                 </div>
                 
                 
-                <ParamsCash1 />
+                <ReaisPeso1 />
                 
               </div>
 
@@ -75,7 +76,7 @@ export default function Home() {
                 </div>
                 <h3>(<strong>p2p</strong>)</h3>
               </div>
-              <ParamsCash2 />
+              <ReaisPeso2 />
             </div>
 
           </div>
@@ -84,7 +85,7 @@ export default function Home() {
 
         
           <Exchanges />
-          
+          <Calculadora />
           <Dicas />
     </main>
   )
