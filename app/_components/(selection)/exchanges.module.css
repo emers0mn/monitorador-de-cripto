@@ -1,3 +1,9 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .contentButton{
     display: flex;
     gap: 10px;
@@ -8,17 +14,6 @@
 .selectionE{
     text-align: center;
 }
-
-/* .contentButton button{
-    border: none;
-    border-radius: 7px;
-    padding: 10px 15px;
-
-    background: var(--cor-1);
-    color: #fff;
-    font-weight: 600;
-} */
-
 .active{
     border: none;
     border-radius: 7px;
@@ -43,6 +38,13 @@
     cursor: pointer;
     scale: 0.9;
     transition: 0.5s;
+}
+
+.atualiza {
+    font-size: 10px;
+    color: var(--cor-4);
+    font-weight: 400;
+    
 }
 
 /* dark mode */

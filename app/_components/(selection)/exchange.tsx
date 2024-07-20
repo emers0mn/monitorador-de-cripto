@@ -1,13 +1,27 @@
 'use client'
 import Link from 'next/link'
 import style from './exchanges.module.css'
-import { useState } from 'react'
-
+import { useEffect, useState } from 'react'
+import { useSearchParams } from "next/navigation";
 
 export default function Exchanges() {
+    const searchParams = useSearchParams()
+    const exchanges = searchParams.get('exchange')
+    const [exchange, setExchange] = useState('lemoncash')
+    const [lastUpdated, setLastUpdated] = useState('')
 
-    const [lemon, setLemon] = useState(true)
-    const [bitso, setBitso] = useState(false)
+    useEffect(() => {
+        if (exchanges === 'bitsoalpha') {
+            setExchange('bitsoalpha')
+        } else {
+            setExchange('lemoncash')
+        }
+
+        // Atualiza a data e hora da última atualização
+        const now = new Date()
+        const formattedTime = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        setLastUpdated(formattedTime)
+    }, [exchanges])
 
     return (
         <section className={style.content}>
@@ -16,19 +30,21 @@ export default function Exchanges() {
             </div>
             <div className={style.contentButton}>
                 <Link
-                    onClick={(() => {
-                        setLemon(true)
-                        setBitso(false)
-                    })}
-                    className={lemon ? style.active : style.desativo} href={"?exchange=lemoncash"} >Lemon Cash</Link>
+                    onClick={() => setExchange('lemoncash')}
+                    className={exchange === 'lemoncash' ? style.active : style.desativo} 
+                    href={"?exchange=lemoncash"}
+                >
+                    Lemon Cash
+                </Link>
                 <Link
-                    onClick={(() => {
-                        setLemon(false)
-                        setBitso(true)
-                    })}
-                    className={bitso ? style.active : style.desativo} href={"?exchange=bitsoalpha"}  >Bitso</Link>
-
+                    onClick={() => setExchange('bitsoalpha')}
+                    className={exchange === 'bitsoalpha' ? style.active : style.desativo} 
+                    href={"?exchange=bitsoalpha"}
+                >
+                    Bitso
+                </Link>
             </div>
+            <p className={style.atualiza}>Última atualização: {lastUpdated}</p>
         </section>
     )
 }

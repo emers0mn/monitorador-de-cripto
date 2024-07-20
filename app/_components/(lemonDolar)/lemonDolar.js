@@ -1,7 +1,7 @@
 import style from './lemonDolar.module.css';
 
-async function getDolar(ex) {
-  const res = await fetch(`https://criptoya.com/api/lemoncash/usdt/ars/0.1`, {
+async function getDolar() {
+  const res = await fetch(`https://criptoya.com/api/bitsoalpha/usdt/ars/0.1`, {
     next: {
       revalidate: 15,
     },
@@ -69,8 +69,7 @@ export async function LemonDolar() {
   );
 }
 
-/*Reais para pesos*/
-
+/*Reais para pesos (direto)*/
 export async function ReaisPeso1() {
   const dolar = await getDolar();
   const realDolar = await getRealDolar();
@@ -86,6 +85,7 @@ export async function ReaisPeso1() {
   );
 }
 
+/*Reais para pesos (P2P)*/
 export async function ReaisPeso2() {
   const dolar = await getDolar();
   const realDolar = await getRealDolar();

@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/page.tsx", "app/_components/(lemonDolar)/lemonDolar.js", "api/dolares.js", "app/_components/(calculadora)/ServerData.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/page.tsx", "app/_components/(lemonDolar)/lemonDolar.js", "api/dolares.js", "app/_components/(calculadora)/ServerData.js", "app/_components/(moedas)/dolarBlue.js", "app/_components/(moedas)/dolarCripto.js"],
   "exclude": ["node_modules"]
 }

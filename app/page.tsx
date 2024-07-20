@@ -1,10 +1,11 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import Link from 'next/link';
-import { DolarBlue, LemonDolar, ReaisPeso1, ReaisPeso2 } from './_components/(lemonDolar)/lemonDolar';
+///import { DolarBlue, LemonDolar, ReaisPeso1, ReaisPeso2 } from './_components/(lemonDolar)/lemonDolar';
 import Dicas from './_components/(dicas)/Dicas';
 import Calculadora from './_components/(calculadora)/Calculadora';
 import Exchanges from './_components/(selection)/exchange';
+import {DolarBlue, DolarCripto, ReaisPeso1, ReaisPeso2} from './_components/(moedas)/dolarBlue';
 
 export default function Home() {
 
@@ -25,12 +26,10 @@ export default function Home() {
           <div className={styles.divisor}></div>
           <div className={styles.valoresFinais}>
             <h2 className={styles.title2}>Dólar Cripto</h2>
-            <LemonDolar
-              
-            />
+            <DolarCripto />
           </div>
         </div>
-        <p className={styles.atualiza}>Última atualização:</p>
+        
       </div>
       
         <div className={styles.valoresContent}>
@@ -80,7 +79,7 @@ export default function Home() {
             </div>
 
           </div>
-          <p className={styles.atualiza}>Última atualização:</p>
+          
         </div>
 
         
