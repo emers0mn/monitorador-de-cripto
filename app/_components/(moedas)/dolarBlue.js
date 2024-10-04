@@ -68,7 +68,7 @@ export function ReaisPeso1() {
         }
     },[exchange, exchanges, setExchange])
 
-    const { data: realDolar, error1, loading1 } = useFetch('https://criptoya.com/api/binance/usdt/brl/0.1');
+    const { data: realDolar, error1, loading1 } = useFetch('https://criptoya.com/api/binancep2p/USDT/BRL/0.1');
 
     const { data: dolar, error, loading } = useFetch(`https://criptoya.com/api/${exchange}/usdt/ars/0.1`);
 
@@ -96,7 +96,7 @@ export function ReaisPeso1() {
 
   // Componente Reais -> Pesos (P2P)
 export function ReaisPeso2() {
-    const { data: realDolar, error1, loading1 } = useFetch('https://criptoya.com/api/binance/usdt/brl/0.1');
+    const { data: realDolar, error1, loading1 } = useFetch('https://criptoya.com/api/binancep2p/USDT/BRL/0.1');
     
     const { data: dolar, error, loading } = useFetch('https://criptoya.com/api/lemoncashp2p/usdt/ars/0.1');
 

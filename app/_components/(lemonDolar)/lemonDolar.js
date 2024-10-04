@@ -15,7 +15,7 @@ async function getDolar() {
 }
 
 async function getRealDolar() {
-  const res = await fetch('https://criptoya.com/api/binance/usdt/brl/0.1', {
+  const res = await fetch('https://criptoya.com/api/binancep2p/USDT/BRL/0.1', {
     next: {
       revalidate: 15,
     },

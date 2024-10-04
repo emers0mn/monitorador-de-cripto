@@ -26,7 +26,7 @@ export default function Calculadora() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const res = await fetch('https://criptoya.com/api/binance/usdt/brl/0.1');
+            const res = await fetch('https://criptoya.com/api/binancep2p/USDT/BRL/0.1');
             const resposta = await res.json();
             setReais(resposta);
         };

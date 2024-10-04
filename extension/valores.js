@@ -2,7 +2,7 @@ async function getDolar() {
     const dolarCripto = await fetch('https://criptoya.com/api/lemoncash/usdt/ars/0.1')
     const cripto = await dolarCripto.json()
 
-    const dolarReal = await fetch('https://criptoya.com/api/binance/usdt/brl/0.1')
+    const dolarReal = await fetch('https://criptoya.com/api/binancep2p/USDT/BRL/0.1')
     const real = await dolarReal.json()
 
 
