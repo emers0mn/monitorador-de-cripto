@@ -58,7 +58,7 @@ export default function Home() {
               </div>
 
             </div>
-            <div className={styles.divisor}></div>
+            {/* <div className={styles.divisor}></div>
             <div className={styles.valoresFinais}>
               
               <div className={styles.detalhe}>
@@ -76,7 +76,7 @@ export default function Home() {
                 <h3>(<strong>p2p</strong>)</h3>
               </div>
               <ReaisPeso2 />
-            </div>
+            </div> */}
 
           </div>
           
