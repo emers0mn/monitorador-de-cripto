@@ -59,29 +59,55 @@ export default function Calculadora() {
 
     return (
         <section className={style.content}>
-            <h2>Calculadora:</h2>
+            <h2>Entenda seu cambio em pesos:</h2>
             <div className={style.contentCalculadoras}>
                 <form className={style.contentInput}>
-                    <label>Reais:</label>
-                    <div className={style.cal}>
-                        <small>R$</small>
-                        <input
-                            placeholder="Reais para pesos..."
-                            onChange={handleChangeReais}
-                        />
+                    <div>
+                        <label>
+                            Reais
+                            <img src="/img/icon/logoIcon.svg"
+                                width={14}
+                                height={14}
+                            />
+                            Pesos:
+                        </label>
+                        <div className={style.cal}>
+
+                            <input
+                                
+                                onChange={handleChangeReais}
+                            />
+                            <small>R$</small>
+                        </div>
                     </div>
-                    <strong>Resultado: ${resultadoReais.toLocaleString('pt-BR')}</strong>
+                    <p className={style.valores}>Convertido:
+                    <span>$
+                    {resultadoReais.toLocaleString('pt-BR')}</span>
+                    </p>
                 </form>
                 <form className={style.contentInput}>
-                    <label>Pesos:</label>
-                    <div className={style.cal}>
-                        <small>$</small>
-                        <input
-                            placeholder="Pesos para reais..."
-                            onChange={handleChangePesos}
-                        />
+                    <div>
+                        <label>
+                            Pesos
+                            <img src="/img/icon/logoIcon.svg"
+                                width={14}
+                                height={14}
+                            />
+                            Reais:
+                        </label>
+                        <div className={style.cal}>
+
+                            <input
+                                
+                                onChange={handleChangePesos}
+                            />
+                            <small>$</small>
+                        </div>
                     </div>
-                    <strong>Resultado: R${resultadoPesos.toLocaleString('pt-BR')}</strong>
+                    <p className={style.valores}>Convertido:
+                    <span>R$
+                    {resultadoPesos.toLocaleString('pt-BR')}</span>
+                    </p>
                 </form>
             </div>
         </section>

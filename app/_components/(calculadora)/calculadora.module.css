@@ -4,11 +4,21 @@
     align-items: center;
 }
 
+.content h2{
+    width: 300px;
+    font-size: 25px;
+    text-align: center;
+    line-height: 28px;
+}
+
 .contentCalculadoras{
     display: flex;
     gap: 50px;
     justify-content: center;
     align-items: center;
+}
+.contentCalculadoras span{
+    font-weight: 800;
 }
 
 .contentInput{
@@ -19,25 +29,53 @@
     gap: 5px;
 }
 
+.contentInput label{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 10px;
+}
+
 .cal{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
     position: relative;
-
-}
-
-.cal small {
-    position: relative;
-    bottom: 5px;
+    
+    height: 40px;
 }
 
 .cal input{
     border: solid var(--cor-1);
-    border-radius: 5px;
+    font-size: 18px;
+    border-radius: 10px;
     margin-bottom: 10px;
+    height: 35px;
+    padding: 5px 10px 5px 35px;
 }
+
+.cal small {
+    position: absolute;
+    left: 13px;
+    top: 0px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.valores{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin: -5px auto 0px auto;
+}
+
+.valores span{
+    font-size: 30px;
+    font-weight: 600;
+}
+
 
 @media screen and (max-width: 600px) {
     .contentCalculadoras{

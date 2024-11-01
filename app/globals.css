@@ -1,16 +1,109 @@
-body{
-    --cor-1: #2DC850;
-    --cor-2: #00FF19;
-    --cor-3: #589E85;
-    --cor-4: #97C5B4;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    --cor-1: #1B3A4B;
+    --cor-2: #6CCFF6;
+    --cor-3: #C0C0C0;
+    --cor-4: #000;
+    --cor-5: #fff;
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+
     background-color: #ffffff;
-    color: #000000;
+    color: var(--cor-1);
+    font-family: 'Poppins', sans-serif;
+
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
 }
 
 a {
     color: black;
     text-decoration: none;
+}
+
+/* Estilo básico para todas as divs de anúncios */
+.ad-simulation {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Tamanhos de anúncio para Desktop */
+.ad-728x90 {
+    width: 728px;
+    height: 90px;
+}
+
+.ad-300x250 {
+    width: 300px;
+    height: 250px;
+}
+
+.ad-336x280 {
+    width: 336px;
+    height: 280px;
+}
+
+.ad-160x600 {
+    width: 160px;
+    height: 600px;
+}
+
+.ad-300x600 {
+    width: 300px;
+    height: 600px;
+}
+
+.ad-970x250 {
+    width: 970px;
+    height: 250px;
+}
+
+/* Tamanhos de anúncio para Mobile */
+.ad-320x50 {
+    width: 320px;
+    height: 50px;
+}
+
+.ad-320x100 {
+    width: 320px;
+    height: 100px;
+}
+
+.ad-250x250 {
+    width: 250px;
+    height: 250px;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+
+    /* Anúncios para dispositivos móveis */
+    .ad-728x90,
+    .ad-970x250,
+    .ad-300x600,
+    .ad-336x280,
+    .ad-160x600 {
+        display: none;
+        /* Esconde anúncios maiores em telas menores */
+    }
+
+    .ad-300x250,
+    .ad-320x50,
+    .ad-320x100,
+    .ad-250x250 {
+        width: 100%;
+        /* Ajusta os anúncios móveis para a largura da tela */
+        height: auto;
+    }
 }

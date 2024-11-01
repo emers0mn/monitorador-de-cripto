@@ -5,6 +5,15 @@
     position: relative;
 }
 
+.dolarHeader {
+    font-weight: 800;
+    
+}
+
+.cifraHeader{
+    font-weight: 400;
+}
+
 .cifra {
     position: relative;
     top: 5px;

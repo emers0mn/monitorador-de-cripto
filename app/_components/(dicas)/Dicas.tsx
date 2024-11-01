@@ -1,13 +1,14 @@
 import style from "./dicas.module.css"
 
-type Dica = {
-    id: string;
-    title: string;
-    conteudo: string;
+type DadosApi = {
+    id: number;
+    name: string;
+    email: string;
   };
 
 async function getDados() {
-    const res = await fetch('https://emers0mn.github.io/Teste-conteudo/teste.json', {
+    const url = "http://localhost:85/api/FomrsAPIHayps"
+    const res = await fetch(url, {
         next: {
             revalidate: 30
         },
@@ -24,11 +25,11 @@ export default async function Dicas() {
     return (
         <main className={style.content}>
             <h2>Dicas do Emerson</h2>
-            {dados.map((dica: Dica) => (
-                <div key={dica.id}>
+            {dados.map((dado: DadosApi) => (
+                <div key={dado.id}>
 
-                    <h2>{dica.title}</h2>
-                    <p>{dica.conteudo}</p>
+                    <h2>{dado.name}</h2>
+                    <p>{dado.email}</p>
 
                 </div>
             ))}

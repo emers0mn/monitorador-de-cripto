@@ -1,0 +1,144 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    margin: 3% auto 15% auto;
+
+    background: #333333;
+    border: solid var(--cor-1);
+    border-radius: 10px;
+    padding: 10px 0 0 0;
+    color: #fff;
+    height: auto;
+    scale: 1.2;
+
+
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentLogin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentLogin label {
+    font-size: 13px;
+    font-weight: 500;
+    position: relative;
+    bottom: -3px;
+}
+
+.contentLogin input {
+    font-size: 12px;
+    border-radius: 5px;
+    border-color: var(--cor-1);
+    padding: 5px;
+
+    background: #ffffff00;
+    color: #fff;
+}
+
+.contentForms {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.contentSenha {
+    display: flex;
+    position: relative;
+
+}
+
+.contentSenha button {
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+
+    right: -18px;
+    bottom: 14px;
+}
+
+.contentSenha a {
+    font-size: 8px;
+    position: absolute;
+    right: 10px;
+    bottom: 41px;
+    color: #ffffff4f;
+}
+
+.contentSenha a:hover {
+    color: #ffffff;
+    text-decoration: solid underline var(--cor-2) 0.5px;
+}
+
+.contentInput {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+    margin: 5px auto;
+    padding: 5px;
+
+    width: 100%;
+}
+
+.btEntrar {
+    padding: 5px 3px;
+    margin: auto;
+    font-weight: 600;
+    width: 80%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--cor-2);
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.contentCriarConta {
+    width: 100%;
+    background: var(--cor-1);
+
+    position: relative;
+    bottom: 0px;
+    margin: 30px auto 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+
+}
+
+.criarConta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    gap: 10px;
+}
+
+@media screen and (min-width: 760px) {
+
+    .content {
+        scale: 1.3;
+    }
+
+}

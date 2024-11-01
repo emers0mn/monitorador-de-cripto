@@ -93,6 +93,45 @@ export function ReaisPeso1() {
     );
   }
 
+  export function ReaisPesoHeader() {
+    const searchParams = useSearchParams()
+    const exchanges = searchParams.get('exchange')
+    
+    const [exchange, setExchange] = useState('lemoncash')
+    
+    useEffect(() => {
+        if(exchanges == 'lemoncash') {
+            setExchange('lemoncash')
+
+        } else if(exchanges == 'bitsoalpha'){
+            setExchange('bitsoalpha')
+        }
+    },[exchange, exchanges, setExchange])
+
+    const { data: realDolar, error1, loading1 } = useFetch('https://criptoya.com/api/binancep2p/USDT/BRL/0.1');
+
+    const { data: dolar, error, loading } = useFetch(`https://criptoya.com/api/${exchange}/usdt/ars/0.1`);
+
+    const [resultado, setResultado] = useState()
+    useEffect(() => {
+        if(dolar && realDolar){
+            setResultado(Math.ceil(dolar.totalBid / realDolar.totalBid))
+        }
+    },[dolar, realDolar, setResultado])
+  
+    if (loading) return <div><LoadingSpinner /></div>;
+    if (error) return <p>Erro ao carregar dados: {error}</p>;
+
+    if (loading1) return <div><LoadingSpinner /></div>;
+    if (error1) return <p>Erro ao carregar dados: {error1}</p>;
+  
+    return (
+      <small className={style.dolarHeader}>
+        <span className={style.cifraHeader}>$</span>
+        {resultado}
+      </small>
+    );
+  }
 
   // Componente Reais -> Pesos (P2P)
 export function ReaisPeso2() {
