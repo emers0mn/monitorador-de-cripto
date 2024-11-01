@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR">
       <body>
-        <GAdense id="9369699891562807" />
+        {/* <GAdense id="9369699891562807" /> */}
         <GoogleAnalytcs id="0GB0JFQ17F" />
         <HotjarC id="5192902" />
         
