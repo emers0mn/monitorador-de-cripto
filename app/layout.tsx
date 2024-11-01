@@ -1,19 +1,18 @@
 import './globals.css';
 import Header from './_components/header';
 import Footer from './_components/footer';
-import { GoogleAnalytcs, GAdense, HotjarC } from './_components/(SEO)/seo'
+import { GoogleAnalytcs, GAdense, HotjarC } from './_components/(SEO)/seo';
 
-export const metadata  = {
+export const metadata = {
   metadataBase: new URL('https://monitorador-de-cripto-lpk7.vercel.app/'),
   title: 'Entenda o seu câmbio em Pesos - Vai ter muita coisa por vir',
-  description: 'Projeto pessoal do Emerson para poder conter a ansiedade das variações cambiais da Argentina',  
+  description: 'Projeto pessoal do Emerson para poder conter a ansiedade das variações cambiais da Argentina',
   alternates: {
     canonical: 'https://monitorador-de-cripto-lpk7.vercel.app/',
   },
   openGraph: {
     title: 'pesos argentinos Hoje - sua rotina em pesos',
-    description: 'Entenda sua rotian em pesos argentinos.',
-    
+    description: 'Entenda sua rotina em pesos argentinos.',
     siteName: 'pesos argentinos Hoje',
     images: [
       {
@@ -28,28 +27,19 @@ export const metadata  = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body >
+      <body>
+        <GAdense id="9369699891562807" />
+        <GoogleAnalytcs id="0GB0JFQ17F" />
+        <HotjarC id="5192902" />
+        
         <div>
           <Header />
           {children}
+          <Footer />
         </div>
-        <GAdense
-          id={"9369699891562807"}
-        />
-        <GoogleAnalytcs
-          id={"0GB0JFQ17F"}
-        />
-        <HotjarC
-          id={"5192902"}
-        />
-        <Footer />        
       </body>
     </html>
   );

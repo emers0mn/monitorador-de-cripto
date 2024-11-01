@@ -88,6 +88,12 @@ export function LeadSter( {id} ) {
 }
 
 export function GAdense({ id }) {
-    
-    return <Script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-${id}`} crossorigin="anonymous" />;
+    return (
+        <Script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-${id}`}
+            crossOrigin="anonymous"
+            strategy="afterInteractive" // Carregar o script após a interação
+        />
+    );
 }
