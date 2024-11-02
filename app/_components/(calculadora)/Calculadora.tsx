@@ -74,7 +74,7 @@ export default function Calculadora() {
                         <div className={style.cal}>
 
                             <input
-                                
+                                type="number"
                                 onChange={handleChangeReais}
                             />
                             <small>R$</small>
@@ -98,7 +98,7 @@ export default function Calculadora() {
                         <div className={style.cal}>
 
                             <input
-                                
+                                type="number"
                                 onChange={handleChangePesos}
                             />
                             <small>$</small>
