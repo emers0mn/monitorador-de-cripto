@@ -27,14 +27,22 @@
     justify-content: center;
     align-items: center;
     gap: 5px;
+
+    margin: auto;
+}
+
+.contentForms{
+    margin: 10px auto;
 }
 
 .contentInput label{
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 
-    margin-bottom: 10px;
+    margin: 10px auto;
+    scale: 1.3;
 }
 
 .cal{
@@ -51,7 +59,7 @@
     border: solid var(--cor-1);
     font-size: 18px;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin: 10px auto 15px auto;
     height: 35px;
     padding: 5px 10px 5px 35px;
 }
@@ -59,7 +67,7 @@
 .cal small {
     position: absolute;
     left: 13px;
-    top: 0px;
+    top: 5px;
     font-size: 18px;
     font-weight: 600;
 }

@@ -14,9 +14,15 @@ export default function Home() {
 
       <div className={styles.valoresContent}>
         <div className={styles.valores}>
-          <div>
+          <div className={styles.contentValores}>
             <div className={styles.valoresFinais}>
-              <h2 className={styles.title2}>Dólar Blue</h2>
+              <h2 className={styles.title2}>
+                Dólar
+                <div className={styles.contentMarca}>
+                  <span className={styles.marca}>Blue</span>
+                  <div className={styles.marcaDaMarca}></div>
+                </div>
+              </h2>
 
               <DolarBlue />
 
@@ -25,8 +31,15 @@ export default function Home() {
           </div>
           <div className={styles.divisor}></div>
           <div className={styles.valoresFinais}>
-            <h2 className={styles.title2}>Dólar Cripto</h2>
-            <DolarCripto />
+            <h2 className={styles.title2}>
+              Dólar
+              <div className={styles.contentMarca}>
+                <span className={styles.marca}>Cripto</span>
+                <div className={styles.marcaDaMarca}></div>
+              </div>
+            </h2>
+            <DolarBlue />
+            {/* <DolarCripto /> */}
           </div>
         </div>
 
@@ -34,26 +47,27 @@ export default function Home() {
 
       <div className={styles.valoresContent}>
         <div className={styles.valores}>
-          <div>
+          <div className={styles.contentValores}>
             <div className={styles.valoresFinais}>
 
               <div className={styles.detalhe}>
                 <div className={styles.valoresFinais1}>
                   <h2 className={styles.title2}>Reais</h2>
                   <Image
-                    src={"./img/icon/favicon_vai.svg"}
-                    width={12}
-                    height={8.31}
+                    src={"./img/icon/logoIcon.svg"}
+                    width={20}
+                    height={20}
                     quality={75}
                     alt='Reais para pesos direto'
+                    className={styles.imageCambio}
                   />
                   <h2 className={styles.title2}>Pesos</h2>
                 </div>
-                <h3>(<strong>direto</strong>)</h3>
+
               </div>
 
-
-              <ReaisPeso1 />
+              <DolarBlue />
+              {/* <ReaisPeso1 /> */}
 
             </div>
 

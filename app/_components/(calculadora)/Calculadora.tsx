@@ -13,6 +13,8 @@ export default function Calculadora() {
     const [reais, setReais] = useState<ApiResposta | null>(null);
     const [valor, setValor] = useState<number>(0);
     const [valorPesos, setValorPesos] = useState<number>(0);
+    const [isIcon1, setIsIcon1] = useState("off");
+    const [isIcon2, setIsIcon2] = useState("off")
 
     useEffect(() => {
         const fetchData = async () => {
@@ -39,8 +41,10 @@ export default function Calculadora() {
         const numberValue = parseFloat(value);
         if (!isNaN(numberValue)) {
             setValor(numberValue);
+            setIsIcon1("Active")
         } else {
             setValor(0);
+            setIsIcon1("Off")
         }
     };
 
@@ -49,8 +53,10 @@ export default function Calculadora() {
         const numberValue = parseFloat(value);
         if (!isNaN(numberValue)) {
             setValorPesos(numberValue);
+            setIsIcon2("Active")
         } else {
             setValorPesos(0);
+            setIsIcon2("Off")
         }
     };
 
@@ -65,9 +71,9 @@ export default function Calculadora() {
                     <div>
                         <label>
                             Reais
-                            <img src="/img/icon/logoIcon.svg"
-                                width={14}
-                                height={14}
+                            <img src={`/img/icon/logoIcon${isIcon1}.svg`}
+                                width={18}
+                                height={18}
                             />
                             Pesos:
                         </label>
@@ -86,12 +92,12 @@ export default function Calculadora() {
                     </p>
                 </form>
                 <form className={style.contentInput}>
-                    <div>
+                    <div className={style.contentForms}>
                         <label>
                             Pesos
-                            <img src="/img/icon/logoIcon.svg"
-                                width={14}
-                                height={14}
+                            <img src={`/img/icon/logoIcon${isIcon2}.svg`}
+                                width={18}
+                                height={18}
                             />
                             Reais:
                         </label>

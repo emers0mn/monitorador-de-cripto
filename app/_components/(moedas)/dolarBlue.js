@@ -16,7 +16,10 @@ export function DolarBlue() {
 
   return (
     <p className={style.dolar}>
-      <span className={style.cifra}>$</span>
+      <div className={style.contentMarca}>
+        <span className={style.marca}>$</span>
+        <div className={style.marcaDaMarca}></div>
+      </div>
       {dolar ? Math.ceil(dolar.venta).toLocaleString('pt-BR') : 'Dados indisponíveis'}
     </p>
   );
@@ -24,139 +27,146 @@ export function DolarBlue() {
 
 // Componente Dolar Cripto -> Pesos
 export function DolarCripto() {
-    const searchParams = useSearchParams()
-    const exchanges = searchParams.get('exchange')
-    
-    const [exchange, setExchange] = useState('lemoncash')
-    
-    useEffect(() => {
-        if(exchanges == 'lemoncash') {
-            setExchange('lemoncash')
+  const searchParams = useSearchParams()
+  const exchanges = searchParams.get('exchange')
 
-        } else if(exchanges == 'bitsoalpha'){
-            setExchange('bitsoalpha')
-        }
-    },[exchange, exchanges, setExchange])
-    
-    const { data: dolar, error, loading } = useFetch(`https://criptoya.com/api/${exchange}/usdt/ars/0.1`);
-  
-    if (loading) return <div><LoadingSpinner /></div>;
-    if (error) return <p>Erro ao carregar dados: {error}</p>;
-    
-  
-    return (
-      <p className={style.dolar}>
-        <span className={style.cifra}>$</span>
-        {dolar ? Math.ceil(dolar.totalBid).toLocaleString('pt-BR') : 'Dados indisponíveis'}
-      </p>
-    );
-  }
+  const [exchange, setExchange] = useState('lemoncash')
 
-  // Componente Reais -> Pesos (direto)
+  useEffect(() => {
+    if (exchanges == 'lemoncash') {
+      setExchange('lemoncash')
+
+    } else if (exchanges == 'bitsoalpha') {
+      setExchange('bitsoalpha')
+    }
+  }, [exchange, exchanges, setExchange])
+
+  const { data: dolar, error, loading } = useFetch(`https://criptoya.com/api/${exchange}/usdt/ars/0.1`);
+
+  if (loading) return <div><LoadingSpinner /></div>;
+  if (error) return <p>Erro ao carregar dados: {error}</p>;
+
+
+  return (
+    <p className={style.dolar}>
+      <span className={style.cifra}>$</span>
+      {dolar ? Math.ceil(dolar.totalBid).toLocaleString('pt-BR') : 'Dados indisponíveis'}
+    </p>
+  );
+}
+
+// Componente Reais -> Pesos (direto)
 export function ReaisPeso1() {
-    const searchParams = useSearchParams()
-    const exchanges = searchParams.get('exchange')
-    
-    const [exchange, setExchange] = useState('lemoncash')
-    
-    useEffect(() => {
-        if(exchanges == 'lemoncash') {
-            setExchange('lemoncash')
+  const searchParams = useSearchParams()
+  const exchanges = searchParams.get('exchange')
 
-        } else if(exchanges == 'bitsoalpha'){
-            setExchange('bitsoalpha')
-        }
-    },[exchange, exchanges, setExchange])
+  const [exchange, setExchange] = useState('lemoncash')
 
-    const { data: realDolar, error1, loading1 } = useFetch('https://criptoya.com/api/binancep2p/USDT/BRL/0.1');
+  useEffect(() => {
+    if (exchanges == 'lemoncash') {
+      setExchange('lemoncash')
 
-    const { data: dolar, error, loading } = useFetch(`https://criptoya.com/api/${exchange}/usdt/ars/0.1`);
+    } else if (exchanges == 'bitsoalpha') {
+      setExchange('bitsoalpha')
+    }
+  }, [exchange, exchanges, setExchange])
 
-    const [resultado, setResultado] = useState()
-    useEffect(() => {
-        if(dolar && realDolar){
-            setResultado(Math.ceil(dolar.totalBid / realDolar.totalBid))
-        }
-    },[dolar, realDolar, setResultado])
-  
-    if (loading) return <div><LoadingSpinner /></div>;
-    if (error) return <p>Erro ao carregar dados: {error}</p>;
+  const { data: realDolar, error1, loading1 } = useFetch('https://criptoya.com/api/binancep2p/USDT/BRL/0.1');
 
-    if (loading1) return <div><LoadingSpinner /></div>;
-    if (error1) return <p>Erro ao carregar dados: {error1}</p>;
-  
-    return (
-      <p className={style.dolar}>
-        <span className={style.cifra}>$</span>
-        {resultado}
-      </p>
-    );
-  }
+  const { data: dolar, error, loading } = useFetch(`https://criptoya.com/api/${exchange}/usdt/ars/0.1`);
 
-  export function ReaisPesoHeader() {
-    const searchParams = useSearchParams()
-    const exchanges = searchParams.get('exchange')
-    
-    const [exchange, setExchange] = useState('lemoncash')
-    
-    useEffect(() => {
-        if(exchanges == 'lemoncash') {
-            setExchange('lemoncash')
+  const [resultado, setResultado] = useState()
+  useEffect(() => {
+    if (dolar && realDolar) {
+      setResultado(Math.ceil(dolar.totalBid / realDolar.totalBid))
+    }
+  }, [dolar, realDolar, setResultado])
 
-        } else if(exchanges == 'bitsoalpha'){
-            setExchange('bitsoalpha')
-        }
-    },[exchange, exchanges, setExchange])
+  if (loading) return <div><LoadingSpinner /></div>;
+  if (error) return <p>Erro ao carregar dados: {error}</p>;
 
-    const { data: realDolar, error1, loading1 } = useFetch('https://criptoya.com/api/binancep2p/USDT/BRL/0.1');
+  if (loading1) return <div><LoadingSpinner /></div>;
+  if (error1) return <p>Erro ao carregar dados: {error1}</p>;
 
-    const { data: dolar, error, loading } = useFetch(`https://criptoya.com/api/${exchange}/usdt/ars/0.1`);
+  return (
+    <p className={style.dolar}>
+      <div className={style.contentMarca}>
+        <span className={style.marca}>$</span>
+        <div className={style.marcaDaMarca}></div>
+      </div>
+      {resultado}
+    </p>
+  );
+}
 
-    const [resultado, setResultado] = useState()
-    useEffect(() => {
-        if(dolar && realDolar){
-            setResultado(Math.ceil(dolar.totalBid / realDolar.totalBid))
-        }
-    },[dolar, realDolar, setResultado])
-  
-    if (loading) return <div><LoadingSpinner /></div>;
-    if (error) return <p>Erro ao carregar dados: {error}</p>;
+export function ReaisPesoHeader() {
+  const searchParams = useSearchParams()
+  const exchanges = searchParams.get('exchange')
 
-    if (loading1) return <div><LoadingSpinner /></div>;
-    if (error1) return <p>Erro ao carregar dados: {error1}</p>;
-  
-    return (
-      <small className={style.dolarHeader}>
-        <span className={style.cifraHeader}>$</span>
-        {resultado}
-      </small>
-    );
-  }
+  const [exchange, setExchange] = useState('lemoncash')
 
-  // Componente Reais -> Pesos (P2P)
+  useEffect(() => {
+    if (exchanges == 'lemoncash') {
+      setExchange('lemoncash')
+
+    } else if (exchanges == 'bitsoalpha') {
+      setExchange('bitsoalpha')
+    }
+  }, [exchange, exchanges, setExchange])
+
+  const { data: realDolar, error1, loading1 } = useFetch('https://criptoya.com/api/binancep2p/USDT/BRL/0.1');
+
+  const { data: dolar, error, loading } = useFetch(`https://criptoya.com/api/${exchange}/usdt/ars/0.1`);
+
+  const [resultado, setResultado] = useState()
+  useEffect(() => {
+    if (dolar && realDolar) {
+      setResultado(Math.ceil(dolar.totalBid / realDolar.totalBid))
+    }
+  }, [dolar, realDolar, setResultado])
+
+  if (loading) return <div><LoadingSpinner /></div>;
+  if (error) return <p>Erro ao carregar dados: {error}</p>;
+
+  if (loading1) return <div><LoadingSpinner /></div>;
+  if (error1) return <p>Erro ao carregar dados: {error1}</p>;
+
+  return (
+    <div className={style.dolarHeader}>
+      <div className={style.contentMarca}>
+        <span className={style.marca}>$</span>
+        <div className={style.marcaDaMarca}></div>
+      </div>
+      
+      {resultado}
+    </div>
+  );
+}
+
+// Componente Reais -> Pesos (P2P)
 export function ReaisPeso2() {
-    const { data: realDolar, error1, loading1 } = useFetch('https://criptoya.com/api/binancep2p/USDT/BRL/0.1');
-    
-    const { data: dolar, error, loading } = useFetch('https://criptoya.com/api/lemoncashp2p/usdt/ars/0.1');
+  const { data: realDolar, error1, loading1 } = useFetch('https://criptoya.com/api/binancep2p/USDT/BRL/0.1');
 
-    const [resultado, setResultado] = useState(0)
-    useEffect(() => {
-        if(dolar && realDolar){
-            setResultado(Math.ceil(dolar.totalBid / realDolar.totalBid))
-        }
-    },[dolar, realDolar, setResultado])
-  
-    if (loading) return <div><LoadingSpinner /></div>;
-    if (error) return <p>Erro ao carregar dados: {error}</p>;
+  const { data: dolar, error, loading } = useFetch('https://criptoya.com/api/lemoncashp2p/usdt/ars/0.1');
 
-    if (loading1) return <div><LoadingSpinner /></div>;
-    if (error1) return <p>Erro ao carregar dados: {error1}</p>;
-  
-    return (
-      <p className={style.dolar}>
-        <span className={style.cifra}>$</span>
-        {resultado}
-      </p>
-    );
-  }
+  const [resultado, setResultado] = useState(0)
+  useEffect(() => {
+    if (dolar && realDolar) {
+      setResultado(Math.ceil(dolar.totalBid / realDolar.totalBid))
+    }
+  }, [dolar, realDolar, setResultado])
+
+  if (loading) return <div><LoadingSpinner /></div>;
+  if (error) return <p>Erro ao carregar dados: {error}</p>;
+
+  if (loading1) return <div><LoadingSpinner /></div>;
+  if (error1) return <p>Erro ao carregar dados: {error1}</p>;
+
+  return (
+    <p className={style.dolar}>
+      <span className={style.cifra}>$</span>
+      {resultado}
+    </p>
+  );
+}
 
