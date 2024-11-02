@@ -6,6 +6,9 @@ import Dicas from './_components/(dicas)/Dicas';
 import Calculadora from './_components/(calculadora)/Calculadora';
 import Exchanges from './_components/(selection)/exchange';
 import { DolarBlue, DolarCripto, ReaisPeso1, ReaisPeso2 } from './_components/(moedas)/dolarBlue';
+import BlogHome from './(blog)/blogHome/BlogHome'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Home() {
 
@@ -38,8 +41,8 @@ export default function Home() {
                 <div className={styles.marcaDaMarca}></div>
               </div>
             </h2>
-            <DolarBlue />
-            {/* <DolarCripto /> */}
+            
+            <DolarCripto />
           </div>
         </div>
 
@@ -66,54 +69,19 @@ export default function Home() {
 
               </div>
 
-              <DolarBlue />
-              {/* <ReaisPeso1 /> */}
+              {/* <DolarBlue /> */}
+              <ReaisPeso1 />
 
             </div>
 
           </div>
-          {/* <div className={styles.divisor}></div>
-            <div className={styles.valoresFinais}>
-              
-              <div className={styles.detalhe}>
-                <div className={styles.valoresFinais1}>
-                  <h2 className={styles.title2}>Reais</h2>
-                  <Image
-                    src={"./img/icon/favicon_vai.svg"}
-                    width={12}
-                    height={8.31}
-                    quality={75}
-                    alt='Reais para pesos P2P'
-                  />
-                  <h2 className={styles.title2}>Pesos</h2>
-                </div>
-                <h3>(<strong>p2p</strong>)</h3>
-              </div>
-              <ReaisPeso2 />
-            </div> */}
 
         </div>
 
       </div>
-
-
-      {/* <Exchanges /> */}
       <Calculadora />
-      {/* <h2>pc</h2> */}
-      {/* Anúncios Desktop */}
-      {/* <div className="ad-simulation ad-728x90">Anúncio 728x90</div>
-      <div className="ad-simulation ad-300x250">Anúncio 300x250</div>
-      <div className="ad-simulation ad-336x280">Anúncio 336x280</div>
-      <div className="ad-simulation ad-160x600">Anúncio 160x600</div>
-      <div className="ad-simulation ad-300x600">Anúncio 300x600</div>
-      <div className="ad-simulation ad-970x250">Anúncio 970x250</div> */}
 
-      {/*<h2>Mobile</h2> */}
-      {/* Anúncios Mobile */}
-      {/* <div className="ad-simulation ad-320x50">Anúncio 320x50</div>
-      <div className="ad-simulation ad-320x100">Anúncio 320x100</div>
-      <div className="ad-simulation ad-250x250">Anúncio 250x250</div> */}
-      {/* <Dicas /> */}
+      <BlogHome />
     </main>
   )
 }

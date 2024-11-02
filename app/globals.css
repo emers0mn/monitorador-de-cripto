@@ -12,10 +12,7 @@ body {
     background-color: #ffffff;
     color: var(--cor-1);
     font-family: 'Poppins', sans-serif;
-
-    display: grid;
-    min-height: 100vh;
-    grid-template-rows: auto 1fr auto;
+    position: relative;
 }
 
 a {

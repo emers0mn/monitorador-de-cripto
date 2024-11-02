@@ -71,9 +71,11 @@ export default function Calculadora() {
                     <div>
                         <label>
                             Reais
-                            <img src={`/img/icon/logoIcon${isIcon1}.svg`}
+                            <img
+                                src={`/img/icon/logoIcon${isIcon1}.svg`}
                                 width={18}
                                 height={18}
+                                alt="Logo-Icone"
                             />
                             Pesos:
                         </label>
@@ -81,23 +83,26 @@ export default function Calculadora() {
 
                             <input
                                 type="number"
+                                placeholder="0,00"
                                 onChange={handleChangeReais}
                             />
                             <small>R$</small>
                         </div>
                     </div>
                     <p className={style.valores}>Convertido:
-                    <span>$
-                    {resultadoReais.toLocaleString('pt-BR')}</span>
+                        <span>$
+                            {resultadoReais.toLocaleString('pt-BR')}</span>
                     </p>
                 </form>
                 <form className={style.contentInput}>
                     <div className={style.contentForms}>
                         <label>
                             Pesos
-                            <img src={`/img/icon/logoIcon${isIcon2}.svg`}
+                            <img
+                                src={`/img/icon/logoIcon${isIcon2}.svg`}
                                 width={18}
                                 height={18}
+                                alt="Logo-Icone"
                             />
                             Reais:
                         </label>
@@ -105,14 +110,15 @@ export default function Calculadora() {
 
                             <input
                                 type="number"
+                                placeholder="0,00"
                                 onChange={handleChangePesos}
                             />
                             <small>$</small>
                         </div>
                     </div>
                     <p className={style.valores}>Convertido:
-                    <span>R$
-                    {resultadoPesos.toLocaleString('pt-BR')}</span>
+                        <span>R$
+                            {resultadoPesos.toLocaleString('pt-BR')}</span>
                     </p>
                 </form>
             </div>

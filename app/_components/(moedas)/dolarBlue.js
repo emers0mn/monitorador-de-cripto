@@ -133,12 +133,8 @@ export function ReaisPesoHeader() {
 
   return (
     <div className={style.dolarHeader}>
-      <div className={style.contentMarca}>
-        <span className={style.marca}>$</span>
-        <div className={style.marcaDaMarca}></div>
-      </div>
-      
-      {resultado}
+            
+      <span className={style.cifraHeader}>$</span>{resultado}
     </div>
   );
 }

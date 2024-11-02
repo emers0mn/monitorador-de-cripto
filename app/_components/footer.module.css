@@ -10,7 +10,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: absolute;
     bottom: 0px;
     
 }
@@ -25,11 +25,3 @@
     margin-top: 0px;
 }
 
-@media screen and (min-width: 480px) {
-    .footer{
-
-        position: absolute;
-
-        
-    }
-}

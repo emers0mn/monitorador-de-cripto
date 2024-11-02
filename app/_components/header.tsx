@@ -33,8 +33,8 @@ const Header = () => {
               className={style.imgLogo}
               alt="Logo pesos argentinos Hoje"
             />:
-            <small> $192
-            {/* <ReaisPesoHeader /> */}
+            <small>
+            <ReaisPesoHeader />
             </small>
           </div>
           <button className={style.btMenu} onClick={handleMenu}>
