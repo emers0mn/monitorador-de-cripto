@@ -15,7 +15,7 @@ export default function Produtos() {
                 router.push("/login")
             }; // Verifica se o token está disponível antes de prosseguir
 
-            const url = 'https://localhost:44337/api/Produtos/Lista';
+            const url = 'http://localhost:85/api/Produtos/Lista';
             const myHeaders = new Headers();
             myHeaders.append("Authorization", `Bearer ${token}`);
 

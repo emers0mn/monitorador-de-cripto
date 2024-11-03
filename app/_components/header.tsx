@@ -26,18 +26,42 @@ const Header = () => {
       <div className={style.contentHead}>
         <section className={style.content}>
           <div className={style.conteinerHead}>
-            <img
-              src={"/img/logo.svg"}
-              width={200}
-              height={40}
-              className={style.imgLogo}
-              alt="Logo pesos argentinos Hoje"
-            />:
+            <Link href={"/"}>
+              <img
+                src={"/img/logo.svg"}
+                width={200}
+                height={40}
+                className={style.imgLogo}
+                alt="Logo pesos argentinos Hoje"
+              />
+            </Link>:
             <small>
-            <ReaisPesoHeader />
+              <ReaisPesoHeader />
+              {/* $192 */}
             </small>
+
+
           </div>
-          <button className={style.btMenu} onClick={handleMenu}>
+          <header className={style.contentMenuPc}>
+            <ul>
+              <li>
+              <Link href={"/"}>home</Link>
+              </li>
+
+              <li>
+              <Link href={"/blog"}>blog</Link>
+              </li>
+
+              <li>
+              <Link href={"/sobre"}>sobre</Link>
+              </li>
+
+              <li>
+                <Link href={"/login"}>login</Link>
+              </li>
+            </ul>
+          </header>
+          <button className={style.btMenuOpen} onClick={handleMenu}>
             <img
               src={`/img/icon/menu${icon}.svg`}
               width={25}

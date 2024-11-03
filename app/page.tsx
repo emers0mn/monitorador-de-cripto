@@ -43,6 +43,7 @@ export default function Home() {
             </h2>
             
             <DolarCripto />
+            {/* <DolarBlue /> */}
           </div>
         </div>
 

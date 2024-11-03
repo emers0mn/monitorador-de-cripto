@@ -13,7 +13,7 @@ export default function PageCriarConta(){
 
     const enviarDados = async (event: React.FormEvent) => {
         event.preventDefault();
-        const url = 'https://localhost:44337/api/Acceso/Registar';
+        const url = 'https://localhost:85/api/Acceso/Registar';
 
         const loginUsuario = {
             nome: nome,

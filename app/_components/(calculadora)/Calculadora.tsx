@@ -13,8 +13,8 @@ export default function Calculadora() {
     const [reais, setReais] = useState<ApiResposta | null>(null);
     const [valor, setValor] = useState<number>(0);
     const [valorPesos, setValorPesos] = useState<number>(0);
-    const [isIcon1, setIsIcon1] = useState("off");
-    const [isIcon2, setIsIcon2] = useState("off")
+    const [isIcon1, setIsIcon1] = useState("Off");
+    const [isIcon2, setIsIcon2] = useState("Off")
 
     useEffect(() => {
         const fetchData = async () => {

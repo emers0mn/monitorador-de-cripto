@@ -18,7 +18,7 @@ export default function PageLogin() {
 
     const enviarDados = async (event: React.FormEvent) => {
         event.preventDefault();
-        const url = 'https://localhost:44337/api/Acceso/Login';
+        const url = 'http://localhost:85/api/Login';
 
         const loginUsuario = {
             email: email,
