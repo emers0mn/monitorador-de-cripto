@@ -4,6 +4,7 @@ import style from "./login.module.css"
 import { use, useState } from "react";
 import useTokenLogin from "../_components/store/useTokenLogin";
 import { useRouter } from 'next/navigation';
+import Image from "next/image";
 export default function PageLogin() {
 
 
@@ -91,6 +92,7 @@ export default function PageLogin() {
                                     src={`/img/icon/${eyes}-eyes.png`}
                                     width={20}
                                     height={20}
+                                    alt="Verificar senha"
                                     />
                                 </button>
                                 <a href="https://api.whatsapp.com/send?phone=541131024913&text=Esqueci%20minha%20senha" target="_blank">Esqueci minha senha</a>

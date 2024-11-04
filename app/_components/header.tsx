@@ -5,6 +5,7 @@ import style from "./header.module.css"
 import Link from "next/link";
 import Menu from '../(layout)/menu'
 import { ReaisPesoHeader } from "./(moedas)/dolarBlue";
+import Image from "next/image";
 
 const Header = () => {
 
@@ -27,7 +28,7 @@ const Header = () => {
         <section className={style.content}>
           <div className={style.conteinerHead}>
             <Link href={"/"}>
-              <img
+              <Image
                 src={"/img/logo.svg"}
                 width={200}
                 height={40}
@@ -62,7 +63,7 @@ const Header = () => {
             </ul>
           </header>
           <button className={style.btMenuOpen} onClick={handleMenu}>
-            <img
+            <Image
               src={`/img/icon/menu${icon}.svg`}
               width={25}
               height={25}
@@ -82,7 +83,7 @@ const Header = () => {
               <h2></h2>
             </div>
             <button className={style.btMenu} onClick={handleMenu}>
-              <img
+              <Image
                 src={`/img/icon/menu${icon}.svg`}
                 width={25}
                 height={25}

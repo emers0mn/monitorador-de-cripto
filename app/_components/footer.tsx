@@ -1,10 +1,11 @@
+import Image from 'next/image'
 import style from './footer.module.css'
 import Link from 'next/link'
 
 export default function Footer(){
     return (
         <footer className={style.footer}>
-            <img
+            <Image
               src={"/img/logo.svg"}
               width={220}
               height={40}

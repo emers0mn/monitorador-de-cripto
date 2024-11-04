@@ -1,28 +1,30 @@
-.container{
+.container {
     width: 125%;
     height: auto;
-    
+
     border-radius: 1rem 1rem 0 0;
+    padding-bottom: 90px;
 }
 
-.contentBlog{
-    
+.contentBlog {
+
     background: var(--cor-2);
     width: 100%;
     height: auto;
-    
-    border-radius: 1rem 1rem 0 0; 
-       
+
+    border-radius: 1rem 1rem 0 0;
+    padding: 20px 0px;
+
 
 }
 
-.contentTurismo{
-    
+.contentTurismo {
+
     background: var(--cor-1);
     width: 100%;
     height: auto;
-    
-    border-radius: 1rem 1rem 0 0; 
+
+    border-radius: 1rem 1rem 0 0;
     position: relative;
     top: -30px;
 
@@ -32,39 +34,39 @@
     align-items: center;
 
     padding-bottom: 80px;
-   
+
 
 }
 
 
-.ContentConteudoHome{
-    margin: 15px auto;
-    width: 300px;
+.ContentConteudoHome {
+    margin: 30px auto;
+    width: 350px;
 }
 
-.ContentConteudo p{
+.ContentConteudo p {
     color: var(--cor-5);
 }
 
 
-.cotentBlogHome{
+.cotentBlogHome {
     padding: 0px 30px 30px 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
     margin-bottom: 10px;
 }
 
-.cotentBlogHome h2{
+.cotentBlogHome h2 {
     font-size: 30px;
     color: var(--cor-5);
     margin: 10px auto 0px auto;
 
 }
 
-.cotentBlogHome h3{
+.cotentBlogHome h3 {
     font-size: 25px;
     margin: 10px 10px auto auto;
 
@@ -72,41 +74,137 @@
 
 }
 
-.cotentBlogHome small{
+.cotentBlogHome small {
     font-size: 12px;
     margin: auto 10px auto auto;
 
 }
 
-.btActionBlog{
+.btActionBlog {
     color: var(--cor-5);
     background: var(--cor-1);
     padding: 10px;
     border-radius: 5px;
 }
 
+.btVejaMaisConteudo{
+    background: var(--cor-1);
+    padding: 10px 25px;
+    border-radius: 10px;
+    margin: 50px auto auto auto;
+    scale: 1.1;
+}
 
+.btVejaMaisConteudo a {
+    color: var(--cor-5);
+    font-weight: 600;
+}
+
+.contentBt{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Banner */
+.banner{
+    width: 900px;
+    height: 600px;
+    background: var(--cor-1);
+}
+
+
+/* Interessante */
+
+.containerInteressante {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 5px auto 20px auto;
+    
+    
+}
+
+.contentInteressante {
+    background: var(--cor-1);
+    width: 290px;
+    height: auto;
+    border-radius: 10px;
+    padding: 5px 20px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.contentInteressante h3,
+.contentInteressante p {
+    color: var(--cor-5);
+    z-index: 2;
+}
+
+.contentInteressante p {
+    text-decoration: underline;
+}
+
+.marcaInteressante {
+    color: var(--cor-5);
+    position: absolute;
+    transform: rotate(270deg);
+    right: -305px;
+    font-size: 110px;
+    font-weight: 600;
+    opacity: 0.2;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+}
+
+/* anuncio */
+
+.contentAnuncio{
+    margin: 20px auto 0px auto;
+}
+
+.contentAnuncio small{
+    color: #ffffffb7;
+}
+
+.anuncio{
+    width: 327px;
+    height: 327px;
+    border: solid #000;
+}
 
 /* aqui */
 
-.cotentTurismoHome{
+.cotentTurismoHome {
     padding: 0px 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
     margin-bottom: 0px;
+
+    width: 90%;
 }
 
-.cotentTurismoHome h2{
+.cotentTurismoHome h2 {
     font-size: 30px;
     color: var(--cor-5);
     margin: 10px auto 0px auto;
 
 }
 
-.cotentTurismoHome h3{
+.cotentTurismoHome h3 {
     font-size: 25px;
     margin: 10px 10px auto auto;
 
@@ -114,16 +212,86 @@
 
 }
 
-.cotentTurismoHome small{
+.cotentTurismoHome small {
     font-size: 12px;
     margin: auto 10px auto auto;
 
 }
 
-.btActionDestino{
+.containerTurismo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin: 10px 20px;
+
+    width: 100%;
+    overflow: auto;
+}
+
+.btActionDestino {
     position: relative;
     color: var(--cor-5);
     background: var(--cor-2);
     padding: 10px;
     border-radius: 5px;
+}
+
+
+@media screen and (min-width: 760px) {
+
+
+    .cotentBlogHome h2 {
+        margin: 10px 0px 0px auto;
+    
+    }
+
+    .contentBlog {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin: auto;
+    
+    }
+
+    .conteudoBlog{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin: auto;
+        width: 100%;
+        height: auto;
+    
+        border-radius: 1rem 1rem 0 0;
+        padding: 20px 0px;
+    }
+
+    .contentBanner{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    .cotentBlogHome{
+        width: 45%;
+    }
+
+    .ContentConteudo {
+        display: flex;
+        width: 670px;
+        gap: 20px;
+        justify-content: center;
+        align-items: initial;
+    }
+
+    .ContentConteudoHome {
+        width: 35%;
+    }
+
+    .text p {
+        width: 350px;
+    }
 }

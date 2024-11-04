@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import style from './calculadora.module.css';
+import Image from "next/image";
 
 type ApiResposta = {
     totalBid: number;
@@ -71,7 +72,7 @@ export default function Calculadora() {
                     <div>
                         <label>
                             Reais
-                            <img
+                            <Image
                                 src={`/img/icon/logoIcon${isIcon1}.svg`}
                                 width={18}
                                 height={18}
@@ -98,7 +99,7 @@ export default function Calculadora() {
                     <div className={style.contentForms}>
                         <label>
                             Pesos
-                            <img
+                            <Image
                                 src={`/img/icon/logoIcon${isIcon2}.svg`}
                                 width={18}
                                 height={18}
