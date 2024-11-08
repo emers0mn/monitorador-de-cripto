@@ -84,7 +84,7 @@ export default function Home() {
       </div>
       <Calculadora />
 
-      <BlogHome />
+      {/* <BlogHome /> */}
     </main>
   )
 }
