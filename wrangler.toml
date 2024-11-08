@@ -4,8 +4,3 @@ compatibility_flags = ["nodejs_compat"]
 
 # Defina o diretório de saída correto
 pages_build_output_dir = ".next"
-
-# Configure o comando de build
-[build]
-command = "npm run build"
-dir = ".next"
