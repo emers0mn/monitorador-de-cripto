@@ -2,9 +2,5 @@ name = "monitorador-de-cripto"
 compatibility_date = "2024-07-29"
 compatibility_flags = ["nodejs_compat"]
 
+# Defina o diretório de saída correto
 pages_build_output_dir = ".next"
-
-[build]
-  command = "next build"
-
-
