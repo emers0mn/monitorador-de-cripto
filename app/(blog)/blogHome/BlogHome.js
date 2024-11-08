@@ -20,6 +20,7 @@ export default function BlogHome() {
 
             
             <section className={style.contentBlog}>
+               
                 <div className={style.conteudoBlog}>
                     {/* Mini Blog */}
                     <div className={style.cotentBlogHome}>
