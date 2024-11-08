@@ -93,7 +93,7 @@ export function GAdense({ id }) {
             async
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-${id}`}
             crossOrigin="anonymous"
-            strategy="afterInteractive" // Carregar o script após a interação
+            strategy="afterInteractive"
         />
     );
 }
