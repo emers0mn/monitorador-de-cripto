@@ -30,7 +30,7 @@ export default function BlogHome() {
                             autor={"Emerson Pereira"}
                             data={"02/11/2024"}
                             resumo={"Sendo melhor universidade da América Latina, não é extranho imagino o porque tantos Brasileiros decidem mudar de vida para poder morar em Buenos Aires..."}
-                            btDestino={"/blog/como-estudar-na-argentina"}
+                            btDestino={"/blog"}
                         />
                         <Blog
                             image={"blogHomeImage"}

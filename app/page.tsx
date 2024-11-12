@@ -10,6 +10,8 @@ import BlogHome from './(blog)/blogHome/BlogHome'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+export const runtime = "edge";
+
 export default function Home() {
 
   return (
