@@ -1,0 +1,1 @@
+@keyframes spinner{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.loading-spinner{width:50px;margin:auto;height:50px;border-top:10px solid var(--cor-1);border:10px solid var(--cor-1);border-top-color:var(--cor-3);border-radius:50%;animation:spinner 1.5s linear infinite;scale:.5}

@@ -14,9 +14,12 @@
 
     border-radius: 1rem 1rem 0 0;
     padding: 20px 0px;
+    display: flex;
+    justify-content: center;
 
 
 }
+
 
 .contentTurismo {
 
@@ -41,7 +44,7 @@
 
 .ContentConteudoHome {
     margin: 30px auto;
-    width: 320px;
+    width: auto;
 }
 
 .ContentConteudo p {
@@ -56,7 +59,7 @@
     justify-content: center;
     align-items: center;
 
-    margin-bottom: 10px;
+
 }
 
 .cotentBlogHome h2 {
@@ -87,7 +90,7 @@
     border-radius: 5px;
 }
 
-.btVejaMaisConteudo{
+.btVejaMaisConteudo {
     background: var(--cor-1);
     padding: 10px 25px;
     border-radius: 10px;
@@ -100,14 +103,14 @@
     font-weight: 600;
 }
 
-.contentBt{
+.contentBt {
     display: flex;
     gap: 20px;
     align-items: center;
 }
 
 /* Banner */
-.banner{
+.banner {
     width: 900px;
     height: 600px;
     background: var(--cor-1);
@@ -122,9 +125,6 @@
     justify-content: center;
     align-items: center;
 
-    margin: 5px auto 20px auto;
-    
-    
 }
 
 .contentInteressante {
@@ -169,15 +169,15 @@
 
 /* anuncio */
 
-.contentAnuncio{
+.contentAnuncio {
     margin: 20px auto 0px auto;
 }
 
-.contentAnuncio small{
+.contentAnuncio small {
     color: #ffffffb7;
 }
 
-.anuncio{
+.anuncio {
     width: 327px;
     height: 327px;
     border: solid #000;
@@ -238,46 +238,24 @@
 }
 
 
-@media screen and (min-width: 760px) {
 
 
-    .cotentBlogHome h2 {
-        margin: 10px 0px 0px auto;
-    
-    }
+@media screen and (min-width: 811px) {
 
     .contentBlog {
-        display: flex;
-        flex-direction: column;
+
+        display: flex;   
         justify-content: center;
-        align-items: flex-start;
-        margin: auto;
+        
     
     }
 
-    .conteudoBlog{
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        margin: auto;
-        width: 100%;
-        height: auto;
     
-        border-radius: 1rem 1rem 0 0;
-        padding: 20px 0px;
-    }
 
-    .contentBanner{
+    .conteudoBlog {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: auto;
     }
 
-    .cotentBlogHome{
-        width: 45%;
-    }
 
     .ContentConteudo {
         display: flex;
@@ -287,11 +265,5 @@
         align-items: initial;
     }
 
-    .ContentConteudoHome {
-        width: 35%;
-    }
 
-    .text p {
-        width: 350px;
-    }
 }
