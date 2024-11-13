@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useParams } from 'next/navigation' // Importa o hook useRouter do Next.js
 
 
-
+export const runtime = 'edge';
 
 export default function Blog() {
   const params = useParams();
