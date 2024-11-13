@@ -40,7 +40,7 @@ export default function Blog() {
                 <p>
                   {conteudo.RESUMO}
                   <br />
-                  <span>{dataDePublicada}: data de publicação</span>
+                  <span>{conteudo.DATA}: data de publicação</span>
                 </p>
                 <div className={style.contentCompartilharIcon}>
                   <img
