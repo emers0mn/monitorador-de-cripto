@@ -1,58 +1,32 @@
+'use client'
+import { useState, useEffect } from 'react';
 import style from './blog.module.css';
 import ReactMarkdown from 'react-markdown'
-
 import Image from "next/image";
+import { usePathname } from 'next/navigation';
 
-export default function Blog() {
+export default function BlogPage() {
 
-    const conteudo = `
-## Introdução
-Esse é o conteúdo do guia de presentes. Vamos explorar várias dicas para encontrar o presente ideal!
+    const [conteudo, setConteudo] = useState();
+    const [tema, setTema] = useState();
+    const [slug, setSlug] = useState();
+    const [titulo, setTitulo] = useState();
+    const [resumo, setResumo] = useState();
+    const [banner, setBanner] = useState();
+    const [dataDePublicada, setDataDePublicada] = useState();
 
-![Alfajor Guaymallen](https://http2.mlstatic.com/D_NQ_NP_2X_974899-MLA41716257785_052020-F.webp )
-*alfajor guaymallen*
+    const pathname = usePathname();
 
-## Dicas de Presentes
-1. Escolha algo que combine com a personalidade da pessoa.
-2. Considere o estilo de vida dela.
-
-### Presentes por Faixa Etária
-Aqui vão algumas sugestões de presentes para diferentes idades:
-
-- **Para crianças**: Jogos educativos, brinquedos de montar.
-- **Para adultos**: Livros, cursos online.
-
-## Dicas de Presentes
-1. Escolha algo que combine com a personalidade da pessoa.
-2. Considere o estilo de vida dela.
-
-### Presentes por Faixa Etária
-Aqui vão algumas sugestões de presentes para diferentes idades:
-
-- **Para crianças**: Jogos educativos, brinquedos de montar.
-- **Para adultos**: Livros, cursos online.
-
-## Dicas de Presentes
-1. Escolha algo que combine com a personalidade da pessoa.
-2. Considere o estilo de vida dela.
-
-### Presentes por Faixa Etária
-Aqui vão algumas sugestões de presentes para diferentes idades:
-
-- **Para crianças**: Jogos educativos, brinquedos de montar.
-- **Para adultos**: Livros, cursos online.
-
-## Dicas de Presentes
-1. Escolha algo que combine com a personalidade da pessoa.
-2. Considere o estilo de vida dela.
-
-![Alfajor Guaymallen](https://http2.mlstatic.com/D_NQ_NP_2X_974899-MLA41716257785_052020-F.webp)
-*alfajor guaymallen*
-
-`;
-    const titulo = "Como estudar na UBA? Como estudar na UBA?";
-    const resumo = "Todo mundo sempre tem alguma duvida sobre como começar a estudar na melhor universidade da América Latina. Esse conteúdo está feito para te ajudar a dar o primeiro passo";
-    const dataDePublicada = "12/11/2024"
+    const requestOptions = {
+        method: "GET",
+        redirect: "follow"
+      };
+      
+      fetch(`https://blog.pesosargentinoshoje.workers.dev/api/conteudoBlog/`, requestOptions)
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.error(error));
+        
     return (
         <div className={style.content}>
 
