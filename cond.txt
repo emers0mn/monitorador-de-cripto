@@ -1,0 +1,54 @@
+Eu poderia fazer algo do tipo?
+Eu sei que preciso organizar melhor o banco de dados, mas esse é apenas um exemplo:
+
+
+Para poder enviar os dados:
+
+const enviarDados = async (event: React.FormEvent) => {
+  event.preventDefault();
+  const url = 'https://d1-tutorial.emeron0000.workers.dev/api/cadastrar';
+
+  const dados = {
+    usuario: usuario
+    email: email,
+    senha: senha
+  };
+
+  try {
+    const resposta = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json', 
+      },
+      body: JSON.stringify(dados),
+    });
+
+    if (!resposta.ok) {
+      throw new Error('Erro na resposta da API');
+    }
+
+    const resultado = await resposta.json(); 
+    console.log('Dados enviados com sucesso:', resultado);
+  } catch (erro) {
+    console.error('Erro ao enviar dados:', erro);
+  }
+};
+
+Para poder registrar os dados no banco de dados:
+
+if (pathname === "/api/cadastrar" && request.method === "POST") {
+      try {
+        const dados = await request.json();
+        const { usuario, email, senha } = dados;
+
+        await env.DB.prepare(
+          "INSERT INTO Customers (usuario, email, senha) VALUES (?, ?, ?)"
+        )
+          .bind(usuario, email, senha)
+          .run();
+
+        return new Response("Cliente inserido com sucesso", { status: 201 });
+      } catch (error) {
+        return new Response("Erro ao inserir o cliente", { status: 500 });
+      }
+    }

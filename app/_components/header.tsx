@@ -37,7 +37,7 @@ const Header = () => {
               />
             </Link>:
             <small>
-              <ReaisPesoHeader />
+              {/* <ReaisPesoHeader /> */}
               {/* $192 */}
             </small>
 

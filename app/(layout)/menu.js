@@ -37,7 +37,7 @@ export default function Menu(){
                 <div className={style.conteinerContanto}>
                     <div className={style.icon}>
                         <Link href={"https://github.com/emers0mn"} className={style.icon}>
-                            <img
+                            <Image
                               src="/img/icon/github.png"
                               width={45}
                               height={45}
@@ -49,7 +49,7 @@ export default function Menu(){
                     </div>
                     <div className={style.icon}>
                         <Link href={"https://github.com/emers0mn"} className={style.icon}>
-                            <img
+                            <Image
                               src="/img/icon/whatsapp.png"
                               width={45}
                               height={45}

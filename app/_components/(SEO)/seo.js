@@ -34,7 +34,7 @@ export function HotjarC( {id} ) {
         Hotjar.init(id, hotjarVersion, {
             debug: true
         });
-    }, []);
+    }, [id]);
 
     return null;
 }
@@ -82,7 +82,7 @@ export function LeadSter( {id} ) {
                 f.setAttribute("charset","UTF-8");f.defer=true;a.neuroleadId=d;
                 e.appendChild(f)}catch(g){}
             }(window,document,"https://cdn.leadster.com.br/neurolead/neurolead.min.js", id)
-    }, []);
+    }, [id]);
 
     return <Script id="leadster-script" strategy="afterInteractive" />;
 }

@@ -1,13 +1,13 @@
 .content {
     position: relative;
-    color: var(--cor-5);
+    color: var(--cor-1);
 }
 
-.conteinerConteudo{
+.conteinerConteudo {
     position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .contentConteudo {
@@ -31,29 +31,39 @@
     align-items: center;
 }
 
+.contentConteudo em {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* capa */
 
-.contentCapa{
-    position: relative;    
+.contentCapa {
+    position: relative;
     top: -80px;
 }
 
-.contenttitle{
+.contenttitle {
     position: absolute;
-    bottom: 80px;
+    bottom: 35%;
 }
 
 .contentCapa h1 {
     margin: auto 45px 0px 45px;
     line-height: 50px;
-    text-decoration: underline #ffffff42 0.75px;
+    text-decoration: underline #ffffffa9 0.75px;
     font-size: 35px;
 }
+
 .contentCapa h1:hover {
-    text-decoration: underline var(--cor-2);
+    text-decoration: underline var(--cor-5);
 }
 
-.contentCapa p, .contentCapa small {
+.contentCapa p,
+.contentCapa small {
     margin: 15px 45px;
     line-height: 25px;
 }
@@ -68,13 +78,14 @@
     top: 0px;
     z-index: -1;
     width: 100%;
-    height: 80vh;
+    height: 85vh;
     background: var(--cor-2);
-    
+
     background-size: auto;
+    border-radius: 0px 0px 10px 10px;
 }
 
-.contentCompartilharIcon{
+.contentCompartilharIcon {
     margin: auto 45px;
     line-height: 38px;
 
@@ -84,17 +95,21 @@
 }
 
 .compartilharIcon {
-    border: solid var(--cor-2) 0.5px;
+    border: solid var(--cor-5) 0.5px;
     border-radius: 50%;
     padding: 5px;
 }
 
 /* banner */
-.banner{
+
+.resumoBanner {
     position: absolute;
-    top: -130px;
+
+}
+
+.banner {
     border-radius: 10px;
-    margin: auto auto 50px auto;
+    margin: 15px auto auto auto;
 
     display: flex;
     flex-direction: column;
@@ -102,19 +117,115 @@
     align-items: center;
 }
 
-.banner small{
+.banner small {
     color: var(--cor-1);
 }
 
 
-.banner img{
+.banner img {
     width: 40vh;
+    border-radius: 10px;
 }
 
 
-@media screen and (min-width: 720px) {
-    .contentConteudo img {
-        width: 50%;
+@media screen and (min-width: 800px) {
+    .contentConteudo {
+        width: 600px;
+        align-content: center;
+        text-align: left;
+        position: relative;
+        left: -180px;
+
+        margin: 20px;
+        padding: 20px;
     }
+
+    .contentConteudo img {
+        width: 450px;
+    }
+
+    .contenttitle {
+        margin: auto 20%;
+        bottom: 50%;
+        width: 120vh;
+    }
+
+    .contenttitle small {
+        padding: 5px 10px;
+    }
+
+    .contenttitle small:hover {
+        cursor: pointer;
+        text-decoration: underline var(--cor-1) 1px;
+    }
+
+    .contentCapa h1 {
+        padding: 5px 10px;
+        transition: 200ms;
+
+    }
+
+    .contentCapa h1:hover {
+        text-decoration: underline var(--cor-5) 4px;
+
+    }
+
+    .resumoBanner {
+        display: flex;
+        flex-direction: row-reverse;
+        
+
+    }
+
+    .contentCapa p {
+        position: relative;
     
+    }
+
+    .contentCapa p span {
+        font-size: 14px;
+        position: absolute;
+        bottom: -40px;
+    
+    }
+
+    .contentCapa p span:hover {
+        text-decoration: underline var(--cor-5) 1px;
+        font-weight: 600;
+    
+    }
+
+    .banner small {
+        color: var(--cor-1);
+    }
+
+
+    .banner img {
+        width: 80vh;
+        border-radius: 10px;
+    }
+
+    .contentCapa p{
+        margin: 75px 25px 90px 25px;
+        transition: 200ms;
+    }
+
+    .contentCapa p:hover{
+        cursor: pointer;
+        text-decoration: underline var(--cor-5) 2px;
+        transition: 200ms;
+    }
+
+
+    .contentCompartilharIcon {
+        margin: 10px 50px auto 38px;
+        scale: 1.4;
+        width: 60px;
+        cursor: pointer;
+    
+    }
+
+
+
+
 }

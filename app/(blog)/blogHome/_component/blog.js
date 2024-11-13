@@ -11,7 +11,7 @@ export function Blog({ image, titulo, autor, data, resumo, btDestino }) {
 
                 <div>
                     <div className={style.detalhe}></div>
-                    <img
+                    <Image
                         src={`/img/blogHome/${image}.png`}
                         width={305}
                         height={265}
@@ -32,7 +32,7 @@ export function Blog({ image, titulo, autor, data, resumo, btDestino }) {
                         <Link href={btDestino} className={style.btActionBlog}>saiba mais</Link>
                         
                         <Link href={`https://api.whatsapp.com/send?text=https://monitorador-de-cripto-lpk7.vercel.app${btDestino}`}>
-                            <img
+                            <Image
                                 src='/img/blogHome/compartilhar(1).png'
                                 width={20}
                                 height={20}
@@ -54,7 +54,7 @@ export function Turismo({ image, btDestino }) {
     return (
         <div className={style.ContentConteudoHome}>
             <div className={style.ContentConteudo}>
-                    <img
+                    <Image
                         src={`/img/blogHome/${image}.png`}
                         width={305}
                         height={265}
