@@ -72,7 +72,7 @@ export default function Calculadora() {
                     <div>
                         <label>
                             Reais
-                            <Image
+                            <img
                                 src={`/img/icon/logoIcon${isIcon1}.svg`}
                                 width={18}
                                 height={18}
@@ -99,7 +99,7 @@ export default function Calculadora() {
                     <div className={style.contentForms}>
                         <label>
                             Pesos
-                            <Image
+                            <img
                                 src={`/img/icon/logoIcon${isIcon2}.svg`}
                                 width={18}
                                 height={18}

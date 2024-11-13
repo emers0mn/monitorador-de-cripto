@@ -88,7 +88,7 @@ export default function PageLogin() {
                                     <input className={style.inputLogin} type={typeSenha} placeholder="Escreva aqui" onChange={(e) => setSenha(e.target.value)}></input>
                                 </div>
                                 <button onClick={handleEyes}>
-                                    <Image
+                                    <img
                                     src={`/img/icon/${eyes}-eyes.png`}
                                     width={20}
                                     height={20}

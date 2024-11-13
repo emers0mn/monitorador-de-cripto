@@ -5,7 +5,7 @@ import Link from 'next/link'
 export default function Footer(){
     return (
         <footer className={style.footer}>
-            <Image
+            <img
               src={"/img/logo.svg"}
               width={220}
               height={40}

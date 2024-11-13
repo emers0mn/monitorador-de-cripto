@@ -74,13 +74,13 @@ Aqui vão algumas sugestões de presentes para diferentes idades:
                             </p>
 
                             <div className={style.contentCompartilharIcon}>
-                                <Image
+                                <img
                                     className={style.compartilharIcon}
                                     width={15}
                                     height={15}
                                     src="https://icons.veryicon.com/png/o/miscellaneous/foundation-icon-5/link-86.png"
                                     alt="Capa do post" />
-                                <Image className={style.compartilharIcon}
+                                <img className={style.compartilharIcon}
                                     width={15}
                                     height={15}
                                     src="https://logospng.org/download/whatsapp/logo-whatsapp-preto-branco-1024.png"
@@ -89,7 +89,7 @@ Aqui vão algumas sugestões de presentes para diferentes idades:
                             </div>
                         </div>
                         <div className={style.banner}>
-                            <Image
+                            <img
                                 src='https://www.redaccion.com.ar/wp-content/uploads/2023/09/Medidas-Plan-Abril-1024-%C3%97-660-px-2023-09-14T083302.326.png'
                                 alt='capa para o blog que por enquanto não é nada'
                             />

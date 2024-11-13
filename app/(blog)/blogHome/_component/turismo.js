@@ -21,7 +21,7 @@ export function Turismo({ image, btDestino }) {
                 
                             <Link href={btDestino}>
                                 <div className={style.detalhe}></div>
-                                <Image
+                                <img
                                     src={`/img/blogHome/${image}.png`}
                                     width={305}
                                     height={265}

@@ -7,6 +7,7 @@ import Menu from '../(layout)/menu'
 import { ReaisPesoHeader } from "./(moedas)/dolarBlue";
 import Image from "next/image";
 
+
 const Header = () => {
 
   const [isMenu, setIsMenu] = useState(true);
@@ -37,7 +38,7 @@ const Header = () => {
               />
             </Link>:
             <small>
-              {/* <ReaisPesoHeader /> */}
+              <ReaisPesoHeader />
               {/* $192 */}
             </small>
 
@@ -63,7 +64,7 @@ const Header = () => {
             </ul>
           </header>
           <button className={style.btMenuOpen} onClick={handleMenu}>
-            <Image
+            <img
               src={`/img/icon/menu${icon}.svg`}
               width={25}
               height={25}
