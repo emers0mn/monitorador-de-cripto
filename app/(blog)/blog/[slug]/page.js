@@ -32,13 +32,13 @@ export default function Blog() {
         <div className={style.conteinerTitle}>
           <div className={style.contenttitle}>
             <div>
-              <small>/{tema}</small>
-              <h1>{titulo}</h1>
+              <small>/{conteudo.TEMA}</small>
+              <h1>{conteudo.TITULO}</h1>
             </div>
             <div className={style.resumoBanner}>
               <div>
                 <p>
-                  {resumo}
+                  {conteudo.RESUMO}
                   <br />
                   <span>{dataDePublicada}: data de publicação</span>
                 </p>
@@ -60,7 +60,7 @@ export default function Blog() {
                 </div>
               </div>
               <div className={style.banner}>
-                <img src={banner || 'https://via.placeholder.com/800x400'} alt="Capa do blog" />
+                <img src={conteudo.CAPA || 'https://via.placeholder.com/800x400'} alt="Capa do blog" />
                 <small>Informação sobre a imagem</small>
               </div>
             </div>
@@ -72,7 +72,7 @@ export default function Blog() {
 
       <div className={style.conteinerConteudo}>
         <div className={style.contentConteudo}>
-          <ReactMarkdown>{conteudo}</ReactMarkdown>
+          <ReactMarkdown>{conteudo.CONTEUDO}</ReactMarkdown>
         </div>
       </div>
     </div>
