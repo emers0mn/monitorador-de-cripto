@@ -14,7 +14,7 @@ export function Blog({ image, titulo, tema, data, resumo, btDestino }) {
                     <div className={style.detalhe}></div>
                     <Link href={`/blog/${btDestino}`}>
                         <img
-                            src={`pesos.imgix.net${image}`}
+                            src={image}
                             width={305}
                             height={265}
                             alt='imagem aqui viu'
