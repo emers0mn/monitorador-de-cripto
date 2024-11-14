@@ -60,7 +60,7 @@ export default function Blog() {
                 </div>
               </div>
               <div className={style.banner}>
-                <img src={conteudo.CAPA || 'https://via.placeholder.com/800x400'} alt="Capa do blog" />
+                <img src={`https://pesos.imgix.net${conteudo.CAPA}?fm=webp&auto=compress`} alt="Capa do blog" />
                 <small>Informação sobre a imagem</small>
               </div>
             </div>
@@ -102,7 +102,7 @@ export default function Blog() {
           <div>
             <div className={style.contentAutorPerfil}>
               <img
-                src='pesos.imgix.net/blog/emerson.png'
+                src='https://pesos.imgix.net/blog/emerson.png'
                 width={75}
                 height={75}
                 alt={`${conteudo.NOME_COMPLETO_AUTOR} - autor desta materia`}

@@ -3,7 +3,7 @@
     height: auto;
 
     border-radius: 1rem 1rem 0 0;
-    padding-bottom: 90px;
+    padding-bottom: 0px;
 }
 
 .contentBlog {
@@ -71,7 +71,7 @@
 
 
 .cotentBlogHome {
-    padding: 0px 30px 30px 30px;
+    padding: 0px 25px 30px 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;

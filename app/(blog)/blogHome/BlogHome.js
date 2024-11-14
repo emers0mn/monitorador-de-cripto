@@ -58,36 +58,36 @@ export default function BlogHome() {
 
                         {conteudos == null ?
 
-                            // <div>
-                            //     <Blog
-                            //         image={"/blog/turismo/top3_alfajor/banner_alfajor.jpg"}
-                            //         titulo={"Top 3 melhores e mais barato alfajores argentinos"}
-                            //         tema={"Turismo/buenos aires"}
-                            //         data={"02/02/2020"}
-                            //         resumo={truncateText("Melhor do que só pegar qualquer coisa e levar de presente, é você focar no que é melhor e mais econômico para sua viagem. Largue essa caixa da Havanna e conheça o melhor dos alfajores argentinos.", 90)}
-                            //         btDestino={"top-3-melhores-e-mais-barato-alfajores-argentinos"}
-                            //     />
+                            <div>
+                                <Blog
+                                    image={"/blog/turismo/top3_alfajor/banner_alfajor.jpg"}
+                                    titulo={"Top 3 melhores e mais barato alfajores argentinos"}
+                                    tema={"Turismo/buenos aires"}
+                                    data={"02/02/2020"}
+                                    resumo={truncateText("Melhor do que só pegar qualquer coisa e levar de presente, é você focar no que é melhor e mais econômico para sua viagem. Largue essa caixa da Havanna e conheça o melhor dos alfajores argentinos.", 90)}
+                                    btDestino={"top-3-melhores-e-mais-barato-alfajores-argentinos"}
+                                />
 
-                            //     <Blog
-                            //         image={"/blog/turismo/top3_alfajor/banner_alfajor.jpg"}
-                            //         titulo={"Top 3 melhores e mais barato alfajores argentinos"}
-                            //         tema={"Turismo"}
-                            //         data={"02/02/2020"}
-                            //         resumo={truncateText("Melhor do que só pegar qualquer coisa e levar de presente, é você focar no que é melhor e mais econômico para sua viagem. Largue essa caixa da Havanna e conheça o melhor dos alfajores argentinos.", 90)}
-                            //         btDestino={"top-3-melhores-e-mais-barato-alfajores-argentinos"}
-                            //     />
+                                <Blog
+                                    image={"/blog/turismo/top3_alfajor/banner_alfajor.jpg"}
+                                    titulo={"Top 3 melhores e mais barato alfajores argentinos"}
+                                    tema={"Turismo"}
+                                    data={"02/02/2020"}
+                                    resumo={truncateText("Melhor do que só pegar qualquer coisa e levar de presente, é você focar no que é melhor e mais econômico para sua viagem. Largue essa caixa da Havanna e conheça o melhor dos alfajores argentinos.", 90)}
+                                    btDestino={"top-3-melhores-e-mais-barato-alfajores-argentinos"}
+                                />
 
-                            //     <Blog
-                            //         image={"/blog/turismo/top3_alfajor/banner_alfajor.jpg"}
-                            //         titulo={"Top 3 melhores e mais barato alfajores argentinos"}
-                            //         tema={"Turismo"}
-                            //         data={"02/02/2020"}
-                            //         resumo={truncateText("Melhor do que só pegar qualquer coisa e levar de presente, é você focar no que é melhor e mais econômico para sua viagem. Largue essa caixa da Havanna e conheça o melhor dos alfajores argentinos.", 90)}
-                            //         btDestino={"top-3-melhores-e-mais-barato-alfajores-argentinos"}
-                            //     />
-                            // </div>
+                                <Blog
+                                    image={"/blog/turismo/top3_alfajor/banner_alfajor.jpg"}
+                                    titulo={"Top 3 melhores e mais barato alfajores argentinos"}
+                                    tema={"Turismo"}
+                                    data={"02/02/2020"}
+                                    resumo={truncateText("Melhor do que só pegar qualquer coisa e levar de presente, é você focar no que é melhor e mais econômico para sua viagem. Largue essa caixa da Havanna e conheça o melhor dos alfajores argentinos.", 90)}
+                                    btDestino={"top-3-melhores-e-mais-barato-alfajores-argentinos"}
+                                />
+                            </div>
 
-                            <LoadingSpinner />
+                            // <LoadingSpinner />
 
                             :
                             conteudos.slice(0, 3).map((conteudo) =>
@@ -96,7 +96,7 @@ export default function BlogHome() {
                                     <Blog
                                         image={conteudo.CAPA}
                                         titulo={conteudo.TITULO}
-                                        tema={conteudo.NOME_COMPLETO_AUTOR}
+                                        tema={conteudo.TEMA}
                                         data={conteudo.DATA}
                                         resumo={truncateText(conteudo.RESUMO, 90)}
                                         btDestino={conteudo.SLUG}
