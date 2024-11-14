@@ -44,8 +44,8 @@ export default function Home() {
               </div>
             </h2>
             
-            <DolarCripto />
-            {/* <DolarBlue /> */}
+            {/* <DolarCripto /> */}
+            <DolarBlue />
           </div>
         </div>
 
@@ -72,8 +72,8 @@ export default function Home() {
 
               </div>
 
-              {/* <DolarBlue /> */}
-              <ReaisPeso1 />
+              <DolarBlue />
+              {/* <ReaisPeso1 /> */}
 
             </div>
 
@@ -84,7 +84,7 @@ export default function Home() {
       </div>
       <Calculadora />
 
-      {/* <BlogHome /> */}
+      <BlogHome />
     </main>
   )
 }

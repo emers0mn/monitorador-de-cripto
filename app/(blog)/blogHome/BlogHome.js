@@ -4,6 +4,8 @@ import style from './BlogHome.module.css'
 import { Blog, Turismo } from './_component/blog';
 
 import Slider from "react-slick";
+import { useEffect, useState } from 'react';
+import LoadingSpinner from '@/app/_components/spinner/LoadingSpinner';
 
 export default function BlogHome() {
 
@@ -15,46 +17,99 @@ export default function BlogHome() {
         slidesToScroll: 1,
     };
 
+    const [conteudos, setConteudos] = useState(null);
+
+    useEffect(() => {
+        // Faz a requisição no lado do cliente
+        const fetchData = async () => {
+            try {
+                const response = await fetch("https://blog.pesosargentinoshoje.workers.dev/api/conteudoBlog");
+                if (!response.ok) throw new Error("Erro ao carregar dados");
+                const result = await response.json();
+                setConteudos(result);
+            } catch (error) {
+                console.error("Erro na requisição:", error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    const truncateText = (text, maxLength) => {
+        if (text.length > maxLength) {
+            return text.slice(0, maxLength) + "...";
+        }
+        return text;
+    };
+
+
+
     return (
         <div className={style.container}>
 
-            
+
             <section className={style.contentBlog}>
-               
-                <div className={style.conteudoBlog}>
+
+                <article className={style.conteudoBlog}>
                     {/* Mini Blog */}
                     <div className={style.cotentBlogHome}>
                         <h2>Últimos conteúdos</h2>
-                        <Blog
-                            image={"blogHomeImage"}
-                            titulo={"Como estudar na Argentina!"}
-                            autor={"Emerson Pereira"}
-                            data={"02/11/2024"}
-                            resumo={"Sendo melhor universidade da América Latina, não é extranho imagino o porque tantos Brasileiros decidem mudar de vida para poder morar em Buenos Aires..."}
-                            btDestino={"/blog"}
-                        />
-                        <Blog
-                            image={"blogHomeImage"}
-                            titulo={"Como estudar na Argentina!"}
-                            autor={"Emerson Pereira"}
-                            data={"02/11/2024"}
-                            resumo={"Sendo melhor universidade da América Latina, não é extranho imagino o porque tantos Brasileiros decidem mudar de vida para poder morar em Buenos Aires..."}
-                            btDestino={"/blog/como-estudar-na-argentina"}
-                        />
-                        <Blog
-                            image={"blogHomeImage"}
-                            titulo={"Como estudar na Argentina!"}
-                            autor={"Emerson Pereira"}
-                            data={"02/11/2024"}
-                            resumo={"Sendo melhor universidade da América Latina, não é extranho imagino o porque tantos Brasileiros decidem mudar de vida para poder morar em Buenos Aires..."}
-                            btDestino={"/blog/como-estudar-na-argentina"}
-                        />
 
 
-                        {/* Botão veja mais */}
+                        {conteudos == null ?
+
+                            <div>
+                                <Blog
+                                    image={"/blog/turismo/top3_alfajor/banner_alfajor.jpg"}
+                                    titulo={"Top 3 melhores e mais barato alfajores argentinos"}
+                                    tema={"Turismo/buenos aires"}
+                                    data={"02/02/2020"}
+                                    resumo={truncateText("Melhor do que só pegar qualquer coisa e levar de presente, é você focar no que é melhor e mais econômico para sua viagem. Largue essa caixa da Havanna e conheça o melhor dos alfajores argentinos.", 90)}
+                                    btDestino={"top-3-melhores-e-mais-barato-alfajores-argentinos"}
+                                />
+
+                                <Blog
+                                    image={"/blog/turismo/top3_alfajor/banner_alfajor.jpg"}
+                                    titulo={"Top 3 melhores e mais barato alfajores argentinos"}
+                                    tema={"Turismo"}
+                                    data={"02/02/2020"}
+                                    resumo={truncateText("Melhor do que só pegar qualquer coisa e levar de presente, é você focar no que é melhor e mais econômico para sua viagem. Largue essa caixa da Havanna e conheça o melhor dos alfajores argentinos.", 90)}
+                                    btDestino={"top-3-melhores-e-mais-barato-alfajores-argentinos"}
+                                />
+
+                                <Blog
+                                    image={"/blog/turismo/top3_alfajor/banner_alfajor.jpg"}
+                                    titulo={"Top 3 melhores e mais barato alfajores argentinos"}
+                                    tema={"Turismo"}
+                                    data={"02/02/2020"}
+                                    resumo={truncateText("Melhor do que só pegar qualquer coisa e levar de presente, é você focar no que é melhor e mais econômico para sua viagem. Largue essa caixa da Havanna e conheça o melhor dos alfajores argentinos.", 90)}
+                                    btDestino={"top-3-melhores-e-mais-barato-alfajores-argentinos"}
+                                />
+                            </div>
+
+                            // <LoadingSpinner />
+
+                            :
+                            conteudos.slice(0, 3).map((conteudo) =>
+
+                                <div key={conteudo.POST_ID}>
+                                    <Blog
+                                        image={conteudo.CAPA}
+                                        titulo={conteudo.TITULO}
+                                        tema={conteudo.NOME_COMPLETO_AUTOR}
+                                        data={conteudo.DATA}
+                                        resumo={truncateText(conteudo.RESUMO, 90)}
+                                        btDestino={conteudo.SLUG}
+                                    />
+                                </div>
+                            )}
+
+
+                        {/* Botão veja mais
                         <div className={style.btVejaMaisConteudo}>
                             <Link href={"/blog"}>Veja mais conteúdo ➡️</Link>
                         </div>
+                        */}
                     </div>
 
                     {/* Interessante */}
@@ -98,43 +153,9 @@ export default function BlogHome() {
 
 
                     </div>
-                </div>
+                </article>
 
             </section>
-
-
-            {/* <section className={style.contentTurismo}>
-
-                <div className={style.cotentTurismoHome}>
-                    <h2>Turismo</h2>
-
-                    <div className={style.containerTurismo}>
-                        <Turismo
-                            image={"caminito"}
-                            btDestino={"/turismo/caminito"}
-                        />
-                        <Turismo
-                            image={"caminito"}
-                            btDestino={"/turismo/caminito"}
-                        />
-                        <Turismo
-                            image={"caminito"}
-                            btDestino={"/turismo/caminito"}
-                        />
-                        <Turismo
-                            image={"caminito"}
-                            btDestino={"/turismo/caminito"}
-                        />
-
-                        <Turismo
-                            image={"caminito"}
-                            btDestino={"/turismo/caminito"}
-                        />
-                    </div>
-
-                </div>
-                <Link className={style.btActionDestino} href="/turismo">Veja mais destinos</Link>
-            </section> */}
 
         </div>
     )

@@ -53,12 +53,12 @@ export default function BlogPage() {
                                         className={style.compartilharIcon}
                                         width={15}
                                         height={15}
-                                        src="https://icons.veryicon.com/png/o/miscellaneous/foundation-icon-5/link-86.png"
+                                        src="./img/blogHome/link.svg"
                                         alt="Capa do post" />
                                     <img className={style.compartilharIcon}
                                         width={15}
                                         height={15}
-                                        src="https://logospng.org/download/whatsapp/logo-whatsapp-preto-branco-1024.png"
+                                        src="./img/blogHome/whatsapp.svg"
                                         alt="Capa do post" />
 
                                 </div>

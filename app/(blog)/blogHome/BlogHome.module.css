@@ -43,12 +43,30 @@
 
 
 .ContentConteudoHome {
-    margin: 30px auto;
+    margin: 30px auto 45px auto;
     width: auto;
+}
+
+.contentImagem img{
+    border-radius: 10px;
+}
+
+.contentImagem {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.contentImagem small{
+    font-size: 10px;
+    position: absolute;
+    top: -17px;
+    left: 3px;
 }
 
 .ContentConteudo p {
     color: var(--cor-5);
+    line-height: 20px;
 }
 
 
@@ -69,24 +87,32 @@
 
 }
 
-.cotentBlogHome h3 {
+.ContentConteudoHome h2 {
     font-size: 25px;
     margin: 10px 10px auto auto;
 
     line-height: 28px;
+    text-decoration: underline var(--cor-1) 2.5px;
 
 }
 
-.cotentBlogHome small {
-    font-size: 12px;
-    margin: auto 10px auto auto;
+.ContentTextSmall {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    margin: 10px auto 0px auto;
+}
+
+.ContentTextSmall small {
+    font-size: 11px;
 
 }
 
 .btActionBlog {
     color: var(--cor-5);
     background: var(--cor-1);
-    padding: 10px;
+    padding: 5px 10px;
     border-radius: 5px;
 }
 
@@ -100,7 +126,7 @@
 
 .btVejaMaisConteudo a {
     color: var(--cor-5);
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .contentBt {
