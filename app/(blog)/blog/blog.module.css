@@ -52,10 +52,10 @@
 }
 
 .contentCapa h1 {
-    margin: auto 45px 0px 45px;
-    line-height: 50px;
+    margin: auto 60px 0px 45px;
+    line-height: 40px;
     text-decoration: underline #ffffffa9 0.75px;
-    font-size: 35px;
+    font-size: 30px;
 }
 
 .contentCapa h1:hover {
@@ -127,6 +127,133 @@
     border-radius: 10px;
 }
 
+/* Referencias */
+.contentReferencias {
+    background: var(--cor-1);
+    color: var(--cor-5);
+
+    border-radius: 15px;
+
+    padding: 20px 25px;
+    margin: 30px 30px;
+}
+
+.contentReferencias h2{
+    color: var(--cor-2);
+    font-weight: 600;
+}
+
+.contentReferencias h2 span{
+    color: var(--cor-5);
+    font-weight: 400;
+}
+
+.contentReferenciasLinks {
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+
+
+}
+
+.contentReferenciasLinks a {
+    color: var(--cor-5);
+    font-size: 14px;
+    text-decoration: underline var(--cor-2) 1px;
+}
+
+/* autor */
+.contentAutor {
+    border: solid var(--cor-2) 5px;
+    border-radius: 15px;
+
+    padding: 20px 25px;
+    margin: 30px 30px;
+}
+
+.contentAutorPerfil {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.contentAutorPerfil h2 {
+    line-height: 20px;
+    font-weight: 600;
+
+
+    width: 120px;
+}
+
+.contentAutorPerfil h2 span {
+    font-weight: 400;
+}
+
+.contentAutorPerfil small{
+    position: absolute;
+    top: 65px;
+    left: 85px;
+    font-size: 11px;
+}
+
+.contentAutorRedesSociais, .contentAutorRedesSociaisLarge{
+    display: flex;
+    gap: 30px;
+    margin: 20px auto auto auto;
+}
+
+.contentAutorLink{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentAutorLink p{
+    margin: 5px auto;
+    font-size: 12px;
+}
+
+.contentAutorRedesSociaisLarge{
+    display: none;
+}
+
+/* divisor */
+
+.contentDivisor{
+    background: var(--cor-1);
+    width: 100px;
+    height: 6px;
+    margin: auto;
+
+    border-radius: 50px;
+}
+
+@media screen and (min-width: 480px){
+
+    .contentAutorRedesSociaisLarge{
+        display: flex;
+        margin: 10px auto auto 10px;
+    }
+    
+    .contentAutorRedesSociais{
+        display: none;
+    }
+
+    .contentAutorPerfil small{
+        top: 55px;
+        left: 86px;
+        font-size: 12px;
+    }
+
+    .contentAutorPerfil h2 {
+        width: auto;
+    }
+
+}
+
+
 
 @media screen and (min-width: 800px) {
     .contentConteudo {
@@ -173,26 +300,26 @@
     .resumoBanner {
         display: flex;
         flex-direction: row-reverse;
-        
+
 
     }
 
     .contentCapa p {
         position: relative;
-    
+
     }
 
     .contentCapa p span {
         font-size: 14px;
         position: absolute;
         bottom: -40px;
-    
+
     }
 
     .contentCapa p span:hover {
         text-decoration: underline var(--cor-5) 1px;
         font-weight: 600;
-    
+
     }
 
     .banner small {
@@ -205,12 +332,12 @@
         border-radius: 10px;
     }
 
-    .contentCapa p{
+    .contentCapa p {
         margin: 75px 25px 90px 25px;
         transition: 200ms;
     }
 
-    .contentCapa p:hover{
+    .contentCapa p:hover {
         cursor: pointer;
         text-decoration: underline var(--cor-5) 2px;
         transition: 200ms;
@@ -222,10 +349,12 @@
         scale: 1.4;
         width: 60px;
         cursor: pointer;
-    
+
     }
 
-
-
+    .contentAutor, .contentReferencias{
+        margin: 30px 45vh;
+}
+    
 
 }
