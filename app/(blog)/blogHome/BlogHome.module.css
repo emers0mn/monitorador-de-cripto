@@ -51,6 +51,16 @@
     border-radius: 10px;
 }
 
+.contentCapa {
+    width: 305px;
+    height: 265px;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
 .contentImagem {
     position: relative;
     display: flex;
@@ -139,6 +149,7 @@
 .banner {
     width: 900px;
     height: 600px;
+    
     background: var(--cor-1);
 }
 

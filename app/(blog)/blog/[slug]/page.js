@@ -1,30 +1,24 @@
-"use client"
-import { useState, useEffect } from 'react';
 import style from '../blog.module.css';
 import ReactMarkdown from 'react-markdown';
-import { useParams } from 'next/navigation' // Importa o hook useRouter do Next.js
+import { notFound } from 'next/navigation'
 import Link from 'next/link';
-
-
 export const runtime = 'edge';
 
-export default function Blog() {
-  const params = useParams();
-  const { slug } = params; // O slug vem do parâmetro de URL
-  const [conteudo, setConteudo] = useState(null);
+export default async function Blog( {params} ) {
+  const { slug } = params;
 
-  useEffect(() => {
-    // Faz a requisição no lado do cliente
-    const fetchData = async () => {
-      const response = await fetch(`https://blog.pesosargentinoshoje.workers.dev/api/conteudoBlog/${slug}`);
-      const result = await response.json();
-      setConteudo(result);
-    };
+  const conteudo = await fetch(`https://blog.pesosargentinoshoje.workers.dev/api/conteudoBlog/${slug}`,
+    {next: { revalidate: 60} }
+  ).then((res) => {
+    return res.json();
+  });
 
-    fetchData();
-  }, [slug]);
+  if (!conteudo) {
+    notFound();
+  };
 
-  if (!conteudo) return <div>Loading...</div>;
+  console.log(conteudo)
+  
 
   return (
     <div className={style.content}>

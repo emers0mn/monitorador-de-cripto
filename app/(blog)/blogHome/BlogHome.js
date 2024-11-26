@@ -1,39 +1,17 @@
-'use client'
+
 import Link from 'next/link'
 import style from './BlogHome.module.css'
 import { Blog, Turismo } from './_component/blog';
 
-import Slider from "react-slick";
-import { useEffect, useState } from 'react';
 import LoadingSpinner from '@/app/_components/spinner/LoadingSpinner';
 
-export default function BlogHome() {
+export default async function BlogHome() {
 
-    var settings = {
-        dots: true,
-
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-    };
-
-    const [conteudos, setConteudos] = useState(null);
-
-    useEffect(() => {
-        // Faz a requisição no lado do cliente
-        const fetchData = async () => {
-            try {
-                const response = await fetch("https://blog.pesosargentinoshoje.workers.dev/api/conteudoBlog");
-                if (!response.ok) throw new Error("Erro ao carregar dados");
-                const result = await response.json();
-                setConteudos(result);
-            } catch (error) {
-                console.error("Erro na requisição:", error);
-            }
-        };
-
-        fetchData();
-    }, []);
+    const conteudos = await fetch(`https://blog.pesosargentinoshoje.workers.dev/api/conteudoBlog`,
+        { next: { revalidate: 60 } }
+    ).then((res) => {
+        return res.json();
+    });
 
     const truncateText = (text, maxLength) => {
         if (text.length > maxLength) {
@@ -156,6 +134,8 @@ export default function BlogHome() {
                 </article>
 
             </section>
+
+            
 
         </div>
     )

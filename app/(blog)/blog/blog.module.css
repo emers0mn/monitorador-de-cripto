@@ -115,6 +115,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    
+    
 }
 
 .banner small {
@@ -333,7 +336,7 @@
     }
 
     .contentCapa p {
-        margin: 75px 25px 90px 25px;
+        margin: 75px -195px 75px 30px;
         transition: 200ms;
     }
 

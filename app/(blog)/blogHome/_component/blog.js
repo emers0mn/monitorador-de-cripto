@@ -1,6 +1,9 @@
+'use client'
+
 import Link from 'next/link'
 import style from '../BlogHome.module.css'
 import Image from 'next/image'
+import Slider from 'react-slick';
 
 
 export function Blog({ image, titulo, tema, data, resumo, btDestino }) {
@@ -13,13 +16,16 @@ export function Blog({ image, titulo, tema, data, resumo, btDestino }) {
                 <div className={style.contentImagem}>
                     <div className={style.detalhe}></div>
                     <Link href={`/blog/${btDestino}`}>
-                        <img
+                    <div className={style.contentCapa} style={{backgroundImage: `url(${image})`}}>
+                        
+                    </div>
+                        {/* <img
                             src={image}
                             width={305}
                             height={265}
                             alt='imagem aqui viu'
 
-                        />
+                        /> */}
                     </Link>
                     <small>tema: <strong>{tema}</strong></small>
                 </div>
@@ -31,7 +37,7 @@ export function Blog({ image, titulo, tema, data, resumo, btDestino }) {
                         </Link>
                         <div className={style.ContentTextSmall}>
 
-                            <small>Postagem: <strong>({data})</strong></small>
+                            <small>publicação: <strong>({data.split("-").reverse().join('/')})</strong></small>
                         </div>
                     </div>
                     <p>{resumo}</p>
@@ -56,19 +62,29 @@ export function Blog({ image, titulo, tema, data, resumo, btDestino }) {
     )
 }
 
-export function Turismo({ image, btDestino }) {
-
+export function Turismo({ images }) {
+    var settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    };
+  
     return (
-        <div className={style.ContentConteudoHome}>
+      <Slider {...settings}>
+        {images.map((image, index) => (
+          <div key={index} className={style.ContentConteudoHome}>
             <div className={style.ContentConteudo}>
-                <img
-                    src={`/img/blogHome/${image}.png`}
-                    width={305}
-                    height={265}
-                    alt='imagem aqui viu'
-                />
+              <img
+                src={`/img/blogHome/${image.src}.png`}
+                width={305}
+                height={265}
+                alt={image.alt}
+              />
             </div>
-        </div>
-
-    )
-}
+          </div>
+        ))}
+      </Slider>
+    );
+  }
