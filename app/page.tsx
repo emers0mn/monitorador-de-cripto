@@ -1,11 +1,12 @@
-
 import styles from './page.module.css'
 import Calculadora from './_components/(calculadora)/Calculadora';
 import { DolarBlue, DolarCripto, ReaisPeso1, ReaisPeso2 } from './_components/(moedas)/dolarBlue';
 import BlogHome from './(blog)/blogHome/BlogHome'
-
+import TesteDeDolar from "./_components/(teste)/dolar";
 
 export default function Home() {
+
+  
 
   return (
     <main className={styles.content}>
@@ -75,6 +76,8 @@ export default function Home() {
 
       </div>
       <Calculadora />
+
+      
 
       <BlogHome />
     </main>

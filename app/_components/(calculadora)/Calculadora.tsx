@@ -17,6 +17,8 @@ export default function Calculadora() {
     const [isIcon1, setIsIcon1] = useState("Off");
     const [isIcon2, setIsIcon2] = useState("Off")
 
+    //
+
     useEffect(() => {
         const fetchData = async () => {
             const res = await fetch('https://criptoya.com/api/lemoncash/usdt/ars/0.1');

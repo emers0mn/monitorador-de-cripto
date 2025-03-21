@@ -38,8 +38,8 @@ const Header = () => {
               />
             </Link>:
             <small>
-              {/* <ReaisPesoHeader /> */}
-              $192
+              <ReaisPesoHeader />
+              {/* $195 */}
             </small>
 
 
