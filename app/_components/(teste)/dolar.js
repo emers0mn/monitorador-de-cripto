@@ -1,6 +1,6 @@
 'use client';
 import { useCriptoStore } from "../../store/useCriptoStore";
-import PegarDados from "../../../api/services/pegarDados";
+import PegarDados from "../../api/services/pegarDados";
 import { useEffect, useState } from "react";
 export default function TesteDeDolar() {
 

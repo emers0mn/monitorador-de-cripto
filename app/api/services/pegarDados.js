@@ -1,4 +1,5 @@
-import { useCriptoStore } from "../../app/store/useCriptoStore";
+import { useCriptoStore } from "../../store/useCriptoStore";
+export const runtime = 'edge';
 
 export default function PegarDados() {
 

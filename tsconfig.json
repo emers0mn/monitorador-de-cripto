@@ -35,7 +35,7 @@
     ".next/types/**/*.ts",
     "app/page.tsx",
     "app/_components/(lemonDolar)/lemonDolar.js",
-    "api/dolares.js",
+    "app/api/dolares.js",
     "app/_components/(calculadora)/ServerData.js",
     "app/_components/(moedas)/dolarBlue.js",
     "app/_components/(moedas)/dolarCripto.js",
