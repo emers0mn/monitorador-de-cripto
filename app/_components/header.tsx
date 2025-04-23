@@ -63,7 +63,8 @@ const Header = () => {
               </li>
             </ul>
           </header>
-          <button className={style.btMenuOpen} onClick={handleMenu}>
+
+          {/* <button className={style.btMenuOpen} onClick={handleMenu}>
             <img
               src={`/img/icon/menu${icon}.svg`}
               width={25}
@@ -71,7 +72,7 @@ const Header = () => {
               className={style.imgMenu}
               alt="Menu"
             />
-          </button>
+          </button> */}
         </section>
       </div>
 
@@ -83,7 +84,7 @@ const Header = () => {
             <div className={style.conteiner}>
               <h2></h2>
             </div>
-            <button className={style.btMenu} onClick={handleMenu}>
+            <button type="button" className={style.btMenu} onClick={handleMenu}>
               <Image
                 src={`/img/icon/menu${icon}.svg`}
                 width={25}
@@ -101,8 +102,6 @@ const Header = () => {
             </div>
             <div className={style.contentContato}>
               <div className={style.divisor}></div>
-
-
             </div>
 
           </section>

@@ -49,7 +49,10 @@ export function DolarCripto() {
 
   return (
     <p className={style.dolar}>
-      <span className={style.cifra}>$</span>
+      <div className={style.contentMarca}>
+        <span className={style.marca}>$</span>
+        <div className={style.marcaDaMarca}></div>
+      </div>
       {dolar ? Math.ceil(dolar.totalBid).toLocaleString('pt-BR') : 'Dados indisponíveis'}
     </p>
   );

@@ -39,7 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <GAdense id={"9369699891562807"} /> 
         <GoogleAnalytcs id={"0GB0JFQ17F"} />
         <HotjarC id={"5192902"} />
-        <Adopt id={"fdccae77-c6c0-4586-991c-cb12c0f25a5b"} />
+        {/* <Adopt id={"fdccae77-c6c0-4586-991c-cb12c0f25a5b"} /> */}
        
         <div>
           <Header />

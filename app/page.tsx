@@ -75,11 +75,12 @@ export default function Home() {
         </div>
 
       </div>
+
       <Calculadora />
 
       
 
-      <BlogHome />
+      {/* <BlogHome /> */}
     </main>
   )
 }
