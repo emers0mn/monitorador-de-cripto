@@ -25,7 +25,7 @@ export default function Exchanges() {
 
     return (
         <section className={style.content}>
-            <div className={style.selectionE}>
+            {/* <div className={style.selectionE}>
                 <h2>Selecione:</h2>
             </div>
             <div className={style.contentButton}>
@@ -43,7 +43,7 @@ export default function Exchanges() {
                 >
                     Bitso
                 </Link>
-            </div>
+            </div> */}
             <p className={style.atualiza}>Última atualização: {lastUpdated}</p>
         </section>
     )

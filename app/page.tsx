@@ -3,6 +3,7 @@ import Calculadora from './_components/(calculadora)/Calculadora';
 import { DolarBlue, DolarCripto, ReaisPeso1, ReaisPeso2 } from './_components/(moedas)/dolarBlue';
 import BlogHome from './(blog)/blogHome/BlogHome'
 import TesteDeDolar from "./_components/(teste)/dolar";
+import Exchanges from './_components/(selection)/exchange';
 
 export default function Home() {
 
@@ -75,6 +76,8 @@ export default function Home() {
         </div>
 
       </div>
+
+      <Exchanges />
 
       <Calculadora />
 

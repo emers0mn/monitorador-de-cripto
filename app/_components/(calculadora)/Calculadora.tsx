@@ -70,6 +70,7 @@ export default function Calculadora() {
         <section className={style.content}>
             <h2>Entenda seu cambio em pesos:</h2>
             <div className={style.contentCalculadoras}>
+
                 <form className={style.contentInput}>
                     <div>
                         <label>
@@ -88,8 +89,9 @@ export default function Calculadora() {
                                 type="number"
                                 placeholder="0,00"
                                 onChange={handleChangeReais}
+                                className={style.inputPesos}
                             />
-                            <small>R$</small>
+                            <small className={style.cifraReais}>R$</small>
                         </div>
                     </div>
                     <p className={style.valores}>Convertido:
@@ -97,6 +99,7 @@ export default function Calculadora() {
                             {resultadoReais.toLocaleString('pt-BR')}</span>
                     </p>
                 </form>
+
                 <form className={style.contentInput}>
                     <div className={style.contentForms}>
                         <label>
@@ -115,8 +118,9 @@ export default function Calculadora() {
                                 type="number"
                                 placeholder="0,00"
                                 onChange={handleChangePesos}
+                                className={style.inputReais}
                             />
-                            <small>$</small>
+                            <small className={style.cifraPesos}>$</small>
                         </div>
                     </div>
                     <p className={style.valores}>Convertido:
