@@ -1,26 +1,26 @@
-// 'use client';
-// import { useCriptoStore } from "../../store/useCriptoStore";
-// import PegarDados from "../../api/services/pegarDados";
-// import { useEffect, useState } from "react";
-// export default function TesteDeDolar() {
+'use client';
+import { useCriptoStore } from "../../store/useCriptoStore";
+import PegarDados from "../../api/services/pegarDados";
+import { useEffect, useState } from "react";
+export default function TesteDeDolar() {
 
-//     const {dolarBlue} = useCriptoStore();
-//     const [dolar, setDolar] = useState('Carregando...');
-//     const { pegarDolarBlue } = PegarDados();
+    const {dolarBlue} = useCriptoStore();
+    const [dolar, setDolar] = useState('Carregando...');
+    const { pegarDolarBlue } = PegarDados();
 
-//     useEffect(() => {
-//         pegarDolarBlue();
-//     }, [pegarDolarBlue]); 
+    useEffect(() => {
+        pegarDolarBlue();
+    }, [pegarDolarBlue]); 
 
-//     useEffect(() => {
-//         if (dolarBlue !== null) {
-//             setDolar(dolarBlue);
-//         }
-//     }, [dolarBlue]);
+    useEffect(() => {
+        if (dolarBlue !== null) {
+            setDolar(dolarBlue);
+        }
+    }, [dolarBlue]);
 
-//  return (
-//    <div>
-//         <p>{dolar}</p>
-//    </div>
-//  );
-// }
+ return (
+   <div>
+        <p>{dolar}</p>
+   </div>
+ );
+}
