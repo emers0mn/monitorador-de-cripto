@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
+html,
 body {
     --cor-1: #1B3A4B;
     --cor-2: #6CCFF6;
@@ -12,7 +13,8 @@ body {
     background-color: #ffffff;
     color: var(--cor-1);
     font-family: 'Poppins', sans-serif;
-    position: relative;
+    height: 100%;
+    width: auto;
 }
 
 a {
