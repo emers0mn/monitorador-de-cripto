@@ -40,7 +40,7 @@
     justify-content: center;
     align-items: center;
     gap: 15px;
-
+    width: 70%;
     margin: 10px auto;
     scale: 1.3;
 }
