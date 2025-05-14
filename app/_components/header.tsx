@@ -44,7 +44,7 @@ const Header = () => {
 
 
           </div>
-          <header className={style.contentMenuPc}>
+          {/* <header className={style.contentMenuPc}>
             <ul>
               <li>
               <Link href={"/"}>home</Link>
@@ -62,7 +62,7 @@ const Header = () => {
                 <Link href={"/login"}>login</Link>
               </li>
             </ul>
-          </header>
+          </header> */}
 
           {/* <button className={style.btMenuOpen} onClick={handleMenu}>
             <img

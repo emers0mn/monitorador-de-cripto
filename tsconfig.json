@@ -40,7 +40,7 @@
     "app/_components/(moedas)/dolarBlue.js",
     "app/_components/(moedas)/dolarCripto.js",
     "build/types/**/*.ts"
-  ],
+, "app/store/useTendencia.js"  ],
   "exclude": [
     "node_modules"
   ]
