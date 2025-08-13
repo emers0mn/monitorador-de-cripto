@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import style from '../(lemonDolar)/lemonDolar.module.css';
 import useFetch from '../../useFetch'; // Ajuste o caminho conforme sua estrutura
-import { useSearchParams } from "next/navigation";
+//import { useSearchParams } from "next/navigation";
 import LoadingSpinner from '../spinner/LoadingSpinner'
 
 // Componente DolarBlue
@@ -27,19 +27,19 @@ export function DolarBlue() {
 
 // Componente Dolar Cripto -> Pesos
 export function DolarCripto() {
-  const searchParams = useSearchParams()
-  const exchanges = searchParams.get('exchange')
+  // const searchParams = useSearchParams()
+  // const exchanges = searchParams.get('exchange')
 
-  const [exchange, setExchange] = useState('lemoncash')
+  const exchange = 'binance'
 
-  useEffect(() => {
-    if (exchanges == 'lemoncash') {
-      setExchange('lemoncash')
+  // useEffect(() => {
+  //   if (exchanges == 'lemoncash') {
+  //     setExchange('lemoncash')
 
-    } else if (exchanges == 'bitsoalpha') {
-      setExchange('bitsoalpha')
-    }
-  }, [exchange, exchanges, setExchange])
+  //   } else if (exchanges == 'bitsoalpha') {
+  //     setExchange('bitsoalpha')
+  //   }
+  // }, [exchange, exchanges, setExchange])
 
   const { data: dolar, error, loading } = useFetch(`https://criptoya.com/api/${exchange}/usdt/ars/0.1`);
 
@@ -60,19 +60,19 @@ export function DolarCripto() {
 
 // Componente Reais -> Pesos (direto)
 export function ReaisPeso1() {
-  const searchParams = useSearchParams()
-  const exchanges = searchParams.get('exchange')
+  // const searchParams = useSearchParams()
+  // const exchanges = searchParams.get('exchange')
 
-  const [exchange, setExchange] = useState('lemoncash')
+  const exchange = 'binance'
 
-  useEffect(() => {
-    if (exchanges == 'lemoncash') {
-      setExchange('lemoncash')
+  // useEffect(() => {
+  //   if (exchanges == 'lemoncash') {
+  //     setExchange('lemoncash')
 
-    } else if (exchanges == 'bitsoalpha') {
-      setExchange('bitsoalpha')
-    }
-  }, [exchange, exchanges, setExchange])
+  //   } else if (exchanges == 'bitsoalpha') {
+  //     setExchange('bitsoalpha')
+  //   }
+  // }, [exchange, exchanges, setExchange])
 
   const { data: realDolar, error1, loading1 } = useFetch('https://criptoya.com/api/binancep2p/USDT/BRL/0.1');
 
@@ -103,19 +103,19 @@ export function ReaisPeso1() {
 }
 
 export function ReaisPesoHeader() {
-  const searchParams = useSearchParams()
-  const exchanges = searchParams.get('exchange')
+  // const searchParams = useSearchParams()
+  // const exchanges = searchParams.get('exchange')
 
-  const [exchange, setExchange] = useState('lemoncash')
+  const exchange = 'binance'
 
-  useEffect(() => {
-    if (exchanges == 'lemoncash') {
-      setExchange('lemoncash')
+  // useEffect(() => {
+  //   if (exchanges == 'lemoncash') {
+  //     setExchange('lemoncash')
 
-    } else if (exchanges == 'bitsoalpha') {
-      setExchange('bitsoalpha')
-    }
-  }, [exchange, exchanges, setExchange])
+  //   } else if (exchanges == 'bitsoalpha') {
+  //     setExchange('bitsoalpha')
+  //   }
+  // }, [exchange, exchanges, setExchange])
 
   const { data: realDolar, error1, loading1 } = useFetch('https://criptoya.com/api/binancep2p/USDT/BRL/0.1');
 
@@ -144,9 +144,10 @@ export function ReaisPesoHeader() {
 
 // Componente Reais -> Pesos (P2P)
 export function ReaisPeso2() {
-  const { data: realDolar, error1, loading1 } = useFetch('https://criptoya.com/api/binancep2p/USDT/BRL/0.1');
+  const exchange = 'binance'
 
-  const { data: dolar, error, loading } = useFetch('https://criptoya.com/api/lemoncashp2p/usdt/ars/0.1');
+  const { data: realDolar, error1, loading1 } = useFetch('https://criptoya.com/api/binancep2p/USDT/BRL/0.1');
+  const { data: dolar, error, loading } = useFetch(`https://criptoya.com/api/${exchange}/usdt/ars/0.1`);
 
   const [resultado, setResultado] = useState(0)
   useEffect(() => {
