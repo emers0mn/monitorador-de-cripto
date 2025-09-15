@@ -63,7 +63,7 @@ export function ReaisPeso1() {
   // const searchParams = useSearchParams()
   // const exchanges = searchParams.get('exchange')
 
-  const exchange = 'binance'
+  const exchange = 'binancep2p'
 
   // useEffect(() => {
   //   if (exchanges == 'lemoncash') {
@@ -76,7 +76,7 @@ export function ReaisPeso1() {
 
   const { data: realDolar, error1, loading1 } = useFetch('https://criptoya.com/api/binancep2p/USDT/BRL/0.1');
 
-  const { data: dolar, error, loading } = useFetch(`https://criptoya.com/api/${exchange}/usdt/ars/0.1`);
+  const { data: dolar, error, loading } = useFetch('https://criptoya.com/api/lemoncash/usdt/ars/0.1');
 
   const [resultado, setResultado] = useState()
   useEffect(() => {
