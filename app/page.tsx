@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import styles from './page.module.css'
 import Calculadora from './_components/(calculadora)/Calculadora';
 import { DolarBlue, DolarCripto, ReaisPeso1, ReaisPeso2 } from './_components/(moedas)/dolarBlue';
@@ -77,7 +78,9 @@ export default function Home() {
 
       </div>
 
-      <Exchanges />
+      <Suspense fallback={<div>Carregando...</div>}>
+        <Exchanges />
+      </Suspense>
 
       <Calculadora />
 

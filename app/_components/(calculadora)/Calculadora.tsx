@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import style from './calculadora.module.css';
-import Image from "next/image";
 
 type ApiResposta = {
     totalBid: number;
@@ -31,7 +30,7 @@ export default function Calculadora() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const res = await fetch('https://criptoya.com/api/binancep2p/USDT/BRL/0.1');
+            const res = await fetch('https://criptoya.com/api/bitsoalpha/USDT/BRL/0.1');
             const resposta = await res.json();
             setReais(resposta);
         };
@@ -63,7 +62,11 @@ export default function Calculadora() {
         }
     };
 
-    const resultadoReais = peso && reais ? valor * (Math.ceil(peso.totalBid / reais.totalBid)) : 0;
+    function calcularDeComissoes(valor: number) {
+        return valor * 0.004997;
+    }
+
+    const resultadoReais = peso && reais ? valor * (Math.ceil(peso.totalBid / reais.totalBid) - calcularDeComissoes(valor)) : 0;
     const resultadoPesos = peso && reais ? valorPesos / (Math.ceil(peso.totalBid / reais.totalBid)) : 0;
 
     return (
@@ -98,6 +101,7 @@ export default function Calculadora() {
                         <span>$
                             {resultadoReais.toLocaleString('pt-BR')}</span>
                     </p>
+                    <p>Comissões (já aplicado): <br /> {calcularDeComissoes(valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
                 </form>
 
                 <form className={style.contentInput}>
@@ -127,6 +131,7 @@ export default function Calculadora() {
                         <span>R$
                             {resultadoPesos.toLocaleString('pt-BR')}</span>
                     </p>
+                    <p>Comissões (já aplicado): <br /> {calcularDeComissoes(valorPesos).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
                 </form>
             </div>
         </section>
