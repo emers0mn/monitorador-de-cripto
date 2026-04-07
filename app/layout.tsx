@@ -41,13 +41,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <HotjarC id={"5192902"} />
         {/* <Adopt id={"fdccae77-c6c0-4586-991c-cb12c0f25a5b"} /> */}
        
-        <div>
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
           <Header />
-          {children}
-          
+          <main style={{ flex: 1 }}>
+            {children}
+          </main>
+          <Footer />
         </div>
       </body>
-        <Footer />
     </html>
   );
 }

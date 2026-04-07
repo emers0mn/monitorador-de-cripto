@@ -72,8 +72,6 @@ export function ReaisPeso1() {
       setResultado(Math.ceil(dolar.totalBid / realDolar.totalBid))
     }
   }, [dolar, realDolar])
-
-  console.log('Dolar:', realDolar);
  
 
   if (loading) return <div><LoadingSpinner /></div>;
